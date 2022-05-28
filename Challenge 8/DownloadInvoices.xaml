@@ -1,0 +1,192 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadInvoices" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="960,1049" sap2010:WorkflowViewState.IdRef="DownloadInvoices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This sequence downlads the invoices in a zip format." DisplayName="DownloadInvoices" sap:VirtualizedContainerService.HintSize="514,984" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message (Downloading Invoices)" sap:VirtualizedContainerService.HintSize="472,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Downloading invoices...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Edge Process" sap:VirtualizedContainerService.HintSize="472,51" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="msedge">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:KillProcess>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,679" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Customer Invoice Portal – Stardex" sap:VirtualizedContainerService.HintSize="434,452" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="fdfb9408-5576-4739-8409-41e517895afb" Timeout="200" Version="V1">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Download invoices" sap:VirtualizedContainerService.HintSize="242,236" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NClick ClickType="Single" DisplayName="Click 'StarShop Invoice'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fdfb9408-5576-4739-8409-41e517895afb" Version="V1">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://stardex.com.ng/customer-invoice-portal/" DesignTimeRectangle="677, 557, 172, 30" ElementType="Text" FriendlyName="'StarShop Invoice'" FullSelectorArgument="&lt;webctrl aaname='StarShop Invoice' parentid='post-1918' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='StarShop Invoice' parentid='post-1918' tag='SPAN' type='' class='' check:innerText='StarShop Invoice' /&gt;" Guid="08466d48-7080-4bd0-9aa5-067e1f70872e" ImageBase64="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" InformativeScreenshot="bd5675e6d7f1e67c65ce14a5fca0fbd2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Customer Invoice Portal – Stardex' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="885, 526, 219, 74" ElementType="Text" FriendlyName="'Get it on Google Play'" FullSelectorArgument="&lt;webctrl aaname=' Get it on                                            Google Pla*' parentid='post-1918' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Get it on                                            Google Pla*' parentid='post-1918' tag='A' type='' class='play-store-btn' check:innerText='Get it on&amp;#xD;&amp;#xA;Google Play' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <ui:LogMessage DisplayName="Log Message (Downloading Invoices)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Invoices downloaded&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, 0, 1382, 784" BrowserType="Edge" IconBase64="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" InformativeScreenshot="faf8da6f1835241b80c36223e06ab610.png" Selector="&lt;html app='msedge.exe' title='Customer Invoice Portal – Stardex' /&gt;" Url="https://stardex.com.ng/customer-invoice-portal/" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Browser error)" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;There was an error opening the browser&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Edge Process" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="msedge">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:KillProcess>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
