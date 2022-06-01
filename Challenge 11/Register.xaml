@@ -1,0 +1,468 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Register" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Email" Type="InArgument(x:String)" />
+    <x:Property Name="in_Password" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="out_PwdAccepted" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>872,2279</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Register_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Activities.System</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Register Workflow" sap:VirtualizedContainerService.HintSize="830,2214" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message (Registering)" sap:VirtualizedContainerService.HintSize="788,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Registering...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="788,1940" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="750,1713" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="716,1497" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Register" sap:VirtualizedContainerService.HintSize="674,1403" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Default="True" Name="reCaptchaExists" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Log Out'" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,145" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Log Out'" sap:VirtualizedContainerService.HintSize="208,51" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/home" DesignTimeRectangle="1188, 111, 80, 50" ElementType="Text" FriendlyName="'Log Out'" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Log Out' /&gt;" Guid="41aa5cb6-ab45-44a3-8bf6-4cd077e4cbf8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAA2CAYAAABZV76QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG2SURBVHhe7ZlRroMgEEX9dB3uwRW5lca9mO5DF2E34QqmMAoPKKXx5b4Xae4k50MHEI4DNmnT970QHM0wDEJwNF3XCcFBoWAoFAyFgqFQMBQKhkLBUCgYCgVDoWAoFAyFgqFQMBQKhkLBUCgYCgVDoWAoFAyFggEJnWSVTeZbLvdXjDJvEsdjyrQrcF9FtlnGXO6X1Cn0NpunvQqcHvbmKlNwr0jVQu3kfaRt42pbFyvs3Xh7220ZM7lDqhOt4uNxfD6az4mX8IH/EaqTD/LJtS7SV4qT+2a8jKTX/CGoJNRe11mh+Yr6WVimb/oCQjRXqqhgvO8UanNGwT2+Py7Gsl1YWFGOUhVSKFhoKefz3PJxX63Cc+M5ImHfKdSQCkqudZF+YR8+ShYVZcKJOdBxomrfd4eXn/a7ttBcpBJdpLKcxD32n02lc9IS99FIBCvhc428yR01mnfzLry8k4CEggnPwcq4gNC9SsKPVnTOVcY1KjQ6DkxUKtNyzS1fMRQKhkLBUCgYCgVDoWAoFAyFgqFQMBQKhkLBUCgYCgVDoWAoFAyFgqFQME3btkJwNMefDgxIiDwBJB6O+HYzoewAAAAASUVORK5CYII=" InformativeScreenshot="3f1152d82712eceed11130a7bec1b0c9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="1029, 111, 159, 50" ElementType="Text" FriendlyName="'Switch to new theme'" FullSelectorArgument="&lt;webctrl aaname='Switch to new theme' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Switch to new theme' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Switch to new theme' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKMAAAA2CAYAAACrxylwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANoSURBVHhe7ZfbkcIwDEXzSR30wA/bBZTAD+mBlBA6oFZv/JZkxzhLmNHOXGbO7Bo/YknHBobT6WQA0MBwu90MABoYjsejAUADkBGoATICNUBGoAbICNQAGYEaICNQA2QEaoCMQA2QEagBMgI1QEagBsgI1AAZgRogI1ADZARqgIxADZARqAEyAjVARqCG/WT8Gc38epkXYbpWxr3lYqY092zGZ+86dF4H18m8nqM51/rUYmOczfgT2i7npP3P2UfGWlKCnPP9zMduAjJyIONbzve5Wtj8finK5bHcno9LHm8Ty8Z6EeMtm6X2/ekGTmuEeY9FstQ/mUtcn2JFrI1h77eLbPc/30e2F34Q+P5zfrbkIo+Rcbv5QcbpseQ59sl5LKbyufP9QvbpY3b7CeP5ZbIW0z7sczOGgHkxOD5wIRQJxorr+2mx5M3o23kd2pZrhsTRIlPkzehiIALKtsAXLPe7g5fElvvkwvXnwrczdizZU/j0kQcyzXUxkMMmblIZg2+vzW/HtAe7fWf0xfDBVE8NLb47+ZOZnjERNtD4f0NGmVwGnefJNzMdF6D7qSTa0kp20UcLzdaOEJG6cyGpycjH5n2J3AVcTsK+ixiK/K7sudbP3v8b+/2AIbggg5SpwC5xPtB48u04lyxXkBgolYontCkXm+fpl7Gca6GFk7RkdPNC/JxQuO5cSETxyTPjmLwvH1N1Hy0Z2bPz897GlOb8na/ImGAnLYuVEm/7bTKWv/lWomL8YxlX92npzYUky+HaHTLKmCibZWzG9Dk7yOgTW02gSJYNyH/pD4KGW2BcvoDnhNIkchldstjHCKVMfr+M9RiKYrX6aKzNfXr6ciHZImOjLoEtMvbE9Clf/QFTDXYZlwP2ApUJWJGxkuD8jE9kDG1aWNkWNGUM+yxjJ8XsyoWEyGHbTRmXdhEDz98mGXti+pD9PqZdYpbNEspT6RNel4mPiVI5oex6aUwoWkQUs1vGtA4pVhREvl+hLaNF7LMomu9v56LEjYnz3sm4kPIXaD6vKWNs57X2vim/+50RgA1ARqAGyAjUABmBGiAjUANkBGqAjEANkBGoATICNUBGoAbICNQAGYEaICNQA2QEaoCMQA2QEagBMgI1QEagBsgI1AAZgRqGw+FgANDAYPDCS8XLmF9/+kkueLJ5xgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/home" DesignTimeRectangle="1188, 111, 80, 50" ElementType="Text" FriendlyName="'Log Out'" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Log Out' /&gt;" Guid="dcb85a99-c3ac-4785-8b81-543fd75312de" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAA2CAYAAABZV76QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG0SURBVHhe7ZZBkoMgEEVdeg7v4MbcwhzBjd4hHsHcwLP2SCMOMISUU3+mJPWtegtp6MCjwVRt2wrBUQ3DIARH1TSNEBwUCoZCwVAoGAoFQ6FgKBQMhYKhUDAUCoZCwVAoGAoFQ6FgKBQMhYKhUDAUCoZCwVAoGJDQXuZ1kemWiv0VnUzPVdbV49En+mW4z7I+J+lSsV9SptDbJEtCYP8wYmfpvbYsRQs1kz+qKe4bVts8GmGv8tm+y9glYrtUJ1rFh3mOeDCfE5vwhv8RqpP34tG7LvKoFCf3Rb6EpJ/xXVBOqHkvs0LTFfW9sMTYeAN8NJarKC/fZwo1se0Y38P2blzswvyKcuSqkELBQnOxI84jH47VKjyXzxEI+0yhG7Gg6F0XeSzszUfJoKI8MTuaJ6h2ezoO+fG4aws1i4mJJSbaFSfRYv825e5JQzhGiQQr/u9u8np31WjczTuzeScBCQXj34OFcQGhtkr8j1ZwzxXGNSo0uA7KlWm45pEvGAoFQ6FgKBQMhYKhUDAUCoZCwVAoGAoFQ6FgKBQMhYKhUDAUCoZCwVAomKquayE4KuEDfES+AMqypMnwMM+bAAAAAElFTkSuQmCC" InformativeScreenshot="6a4d5874f6146bef7b42f20a68cc33c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1029, 111, 159, 50" ElementType="Text" FriendlyName="'Switch to new theme'" FullSelectorArgument="&lt;webctrl aaname='Switch to new theme' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Switch to new theme' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Switch to new theme' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKMAAAA2CAYAAACrxylwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANoSURBVHhe7ZfbkcIwDEXzSR30wA/bBZTAD+mBlBA6oFZv/JZkxzhLmNHOXGbO7Bo/YknHBobT6WQA0MBwu90MABoYjsejAUADkBGoATICNUBGoAbICNQAGYEaICNQA2QEaoCMQA2QEagBMgI1QEagBsgI1AAZgRogI1ADZARqgIxADZARqAEyAjVARqCG/WT8Gc38epkXYbpWxr3lYqY092zGZ+86dF4H18m8nqM51/rUYmOczfgT2i7npP3P2UfGWlKCnPP9zMduAjJyIONbzve5Wtj8finK5bHcno9LHm8Ty8Z6EeMtm6X2/ekGTmuEeY9FstQ/mUtcn2JFrI1h77eLbPc/30e2F34Q+P5zfrbkIo+Rcbv5QcbpseQ59sl5LKbyufP9QvbpY3b7CeP5ZbIW0z7sczOGgHkxOD5wIRQJxorr+2mx5M3o23kd2pZrhsTRIlPkzehiIALKtsAXLPe7g5fElvvkwvXnwrczdizZU/j0kQcyzXUxkMMmblIZg2+vzW/HtAe7fWf0xfDBVE8NLb47+ZOZnjERNtD4f0NGmVwGnefJNzMdF6D7qSTa0kp20UcLzdaOEJG6cyGpycjH5n2J3AVcTsK+ixiK/K7sudbP3v8b+/2AIbggg5SpwC5xPtB48u04lyxXkBgolYontCkXm+fpl7Gca6GFk7RkdPNC/JxQuO5cSETxyTPjmLwvH1N1Hy0Z2bPz897GlOb8na/ImGAnLYuVEm/7bTKWv/lWomL8YxlX92npzYUky+HaHTLKmCibZWzG9Dk7yOgTW02gSJYNyH/pD4KGW2BcvoDnhNIkchldstjHCKVMfr+M9RiKYrX6aKzNfXr6ciHZImOjLoEtMvbE9Clf/QFTDXYZlwP2ApUJWJGxkuD8jE9kDG1aWNkWNGUM+yxjJ8XsyoWEyGHbTRmXdhEDz98mGXti+pD9PqZdYpbNEspT6RNel4mPiVI5oex6aUwoWkQUs1vGtA4pVhREvl+hLaNF7LMomu9v56LEjYnz3sm4kPIXaD6vKWNs57X2vim/+50RgA1ARqAGyAjUABmBGiAjUANkBGqAjEANkBGoATICNUBGoAbICNQAGYEaICNQA2QEaoCMQA2QEagBMgI1QEagBsgI1AAZgRqGw+FgANDAYPDCS8XLmF9/+kkueLJ5xgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Register'" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/login" DesignTimeRectangle="422, 572, 78, 34" ElementType="Text" FriendlyName="'Register'" FullSelectorArgument="&lt;webctrl aaname='                                 Register                       *' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                                 Register                       *' tag='A' type='' class='btn bg-warning' check:innerText='Register' /&gt;" Guid="bef08764-7253-42d7-bc64-62b6d14e2c84" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAmCAYAAABXn8xMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVGhD7ZpBbsIwEEV7J87FBThETsGabSVYsWIHLNmTDVIP0FYtbmznJzPDhBAckKnmS09q4zixn8cJi7w5yygxkSOFiTyfv9zv94f7+SwrjoZKGRx5VzSNSN9gAodQMpmNyFiJWgejC+8MaURaNd5DWdtjIrUTjT4QE5kIYiITQUxkIoiJTAQxkYkgJjIRxEQmgiSKPLhF8e4mM4Vi405qnzsoN246W7lFqbQxtq646bzxQEYRWez145P5Vhx/NP9OZMV+XVXm2u3IsdNyRapWTDhUHdrWbuHPRVWLitzNcV48N97DS2yPt2Pix+ni+vFMl5umXZ1HD8jTRAaJdLuz9jjZ6fIQ2yBVESmvw/+XFRmv244vjhf3iQubVsHIk7a2nGDEV1aYlJdKJddtt4jk8PuEc+XjJVwrLuD1a90G8riXDZ0AKkzBi9QmzCZJRKLKYn+5OFwkfwRQMhVJKzIMTk6QibhkmEhAF5E+IoRIWZGErEV6YiW0z0dUkfos9QzY2qxfgF6bi+wTlb1ITI4OMgy6U278+56XzeVLiwoX162g/V9AZAVkkK0ln1msH84P1D9/0JdVJN3SHl6puMfFogC5uHmIfBxhkleeb7mA5CFS/Obk2z5vkGwq8uq2zxgk2639KiAmMhHERCaCmMhEEBOZCEJE2icrw1E+WbGPqIajfkRln/UNpeOzPh/fECvThHbT86GpJS0mcpQ49welYwB4hr6fUgAAAABJRU5ErkJggg==" InformativeScreenshot="6ac9c61b427c287f68788f9c6a54e655.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="247, 572, 172, 34" ElementType="Text" FriendlyName="'Forgot Your Password?'" FullSelectorArgument="&lt;webctrl aaname='                                 Forgot Your Password?          *' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                                 Forgot Your Password?          *' tag='A' type='' class='btn bg-warning' check:innerText='Forgot Your Password?' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALAAAAAmCAYAAABkiBEAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPoSURBVHhe7Zw9ctswEIVzJ59LF8ghdArXajMjV6rc2S7dW41ncoAkkxgBsADxFlhSov5CxG9nvrHBxd/uPkKUCn5xNFrHRgHTujYl4I+Pn+7Pr+/u94+9542QhbCPugz6rG0QcHBSuGTZ7BsRDwKWk9caRMhyCDpFGwTM05f0wT4pVgwEbHUmZHmgUcCkO9AoYNIdaBQw6Q40Cph0BxoFTLoDjQIm3YFGAZPuQDtTwE9u/fWbu7NYP7p3c8x1ed8+uLv7J8OX9mruK/nMcZfk1W3WkCNgtX01+veK5HP9Uq7FukC86JsL2gUE/OA2e8v3bxgXsGf/6FaGWOKYm9xwIuC2eFLw/0fEWsAi3p17zv5Uh1NFjHYTAeu7DwKJ43duk/1ZRC+70t9f29z7vyhK9MP6ap0RQUof2HNMJsYgyc/zoKhaobeFWm0fh/FtgcYEnOYeYmxP6mYfg0/n3/bJfIdjKbXR8xyumep/v4O8tGsHnuuazgDt6gKWwOrE5HYSCwZS351ZrLlPbMOaVTvOP5mYJI6Y+Dq5sp+xdpz7gIBrQWlkvWkBp/1BDGreGC8ICtsTPp2XtEbdN/llveLT7bZmdf8oTsiLRehTi/pY0K70DKyD1YGgaFq/TnTpL9dwbBmDd3M73kLWXa19XxBkHKsE6qlFcEjA9XiF7L8p7KGPVPyUqEWKTPniHFgXf0r6vOU1Qw7l/7k1s2pizVEQgY/s8wjQrnsCNx/PQrn72kCtO7MI1E4MivY4AXtisfXeyjrQDwp/KQG3N3wbc0AKncl71XPoXEz5oFbptA37LXVIgppdM6smsg99TZCYThdvAO3zClidSEJZx+53KQFbhUWkyJ4810QeRazH+cK1kNtBuGHesEb4m+OeWOtsAY/MPRe0Kz8Djwc3JuBWgOlUiddwbBkTi5XGnCNgU4C3eIRQGDmdLLydE9MXT17/pdg/OslcYS35Qlb2NLdm1vrWHJ6pR5wZoC3iS5wKNBYLrsWgi0ClDWtW7Tj/iQLO+ynFqNrWWrDXywkY+0h7WLcWAYp7yje0w1y5j+xHjfHMrlm1bj79p+M8HbSrCziQCy1gsoxkBGJCUn8viPAzmrrD0V+v3xRpBFPAgSwYQZ8s+NEcfE9KkJcRsKeJT/aU94J7COB8U75BsHCDj+15bs2wf/4psYmzvsFOBO1MAd+GUJRaSOTzgrY4ATcnQv0xSD49aAs8gfNzWYbiJRq0Lh4hCEHQKGDSHWgUMOkONAqYdAcaBUy6Aw0EzFdLkR4YebUUX+5HemD05X58vSpZPhOvVw0WnHISU8hkSRzxgmsarUejgGkdm3N/AYkoeGN/eLIOAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Text="[in_Email]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/register" DesignTimeRectangle="183, 308, 485, 34" ElementType="InputBox" FriendlyName="'INPUT email'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='email' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' class='form-control ' aaname='Email:' /&gt;" Guid="53525f1d-9763-4630-a251-14987a67dcd0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGDSURBVHhe7dgxisJQGIXR2f/aJCtIZyGCiAgBxZg33CEJWkxp/Itz4BZ5ef1H8tMAgJJEGgCKeov0MAyt7/vWdV3b7XZmZma2wdLd9DcdfrVGOi9yab/ft9Pp1M7ns5mZmW2wdDf9TYdfQ71GOgXPhev12u73e3s+n2ZmZrbB0t30Nx1OjxdrpFPvy+XSxnFs0zTNpwDAp6W76W86nB4v1kjnn/jtdhNoAPiC9DcdTo8Xb5HOJzcA8B3psEgDQEEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAUJdIAUJRIA0BRIg0ARYk0ABQl0gBQlEgDQFEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAUJdIAUJRIA0BRIg0ARYk0ABQl0gBQ1L+R7rquPR6P+QkA2Fo6nB4v1kj3fd8Oh0Obpmk+AQC2kv6mw+nxYo30MAx/9T4ej20cx/kUAPi0dDf9TYfT48Ua6ciLFDyX8k/czMzMPr90N/19DXS8RRoAqEOkAaCk1n4BOGRylpSr+hAAAAAASUVORK5CYII=" InformativeScreenshot="24af30441986c2be60b6b1bd9a39fc36.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="183, 283, 42, 20" ElementType="Text" FriendlyName="'Email'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Email:' check:innerText='Email:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAYCAYAAACFms+HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADgSURBVFhH7ZPRDYQgDEBvJ+aCVYib4CSGMUzcoedJC0eVHEHtxYSX9IMC7QPxBQ+li0vTxaXp4tJE8WU0oJQqhAWP667Fg83q83GZP4tzToibccHMAZMNBxkcOM0ORXO7GiSTwk44tRPl4wX7GHDzloi0ifPQBkyWo0bUmEdJ9IT4YQyhTBLHwrOLwuEWk2i61W+4yC/xMm3iND5o5Iewh4tTPsQN4nVvvFac3/CNN36pOD0l7VblbRbXSz0VatQqvota8bM/Z6v4Slb3sw9rhC97gfjT6OLSdHFpurgsAG/i+oYYVaEwkwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" SecureText="[in_Password]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/register" DesignTimeRectangle="183, 382, 485, 34" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control ' aaname='Password:' /&gt;" Guid="75a4cb53-23a4-49dd-9724-0275152b4fe0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGDSURBVHhe7dgxisJQGIXR2f/aJCtIZyGCiAgBxZg33CEJWkxp/Itz4BZ5ef1H8tMAgJJEGgCKeov0MAyt7/vWdV3b7XZmZma2wdLd9DcdfrVGOi9yab/ft9Pp1M7ns5mZmW2wdDf9TYdfQ71GOgXPhev12u73e3s+n2ZmZrbB0t30Nx1OjxdrpFPvy+XSxnFs0zTNpwDAp6W76W86nB4v1kjnn/jtdhNoAPiC9DcdTo8Xb5HOJzcA8B3psEgDQEEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAUJdIAUJRIA0BRIg0ARYk0ABQl0gBQlEgDQFEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAUJdIAUJRIA0BRIg0ARYk0ABQl0gBQ1L+R7rquPR6P+QkA2Fo6nB4v1kj3fd8Oh0Obpmk+AQC2kv6mw+nxYo30MAx/9T4ej20cx/kUAPi0dDf9TYfT48Ua6ciLFDyX8k/czMzMPr90N/19DXS8RRoAqEOkAaCk1n4BOGRylpSr+hAAAAAASUVORK5CYII=" InformativeScreenshot="70d3e8b2c47653b15e4fc448fe75ce70.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="183, 357, 71, 20" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;webctrl aaname='Password:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password:' tag='LABEL' type='' class='' check:innerText='Password:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAYCAYAAACyVACzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGxSURBVFhH7ZTbbcMwDEW7k+eKVxG8iT1J4DECeAfVknhF6mErbFGgCHgBfiR8H0n+8qa3ZbAUMlgKGSyFDJZCBkshg6VQhnVss5+mqWPO7xTzkXq6uOe8HfTHtd6AFeyDgf0GVpl0+PURYM1+fdE/NdTHekZBiGdzT3JFXfub/q/VzzGGDwoxyNkXWYtnjEL+w3lHPVPt3bucc9ZuYLU7QzpYVLg25JTDw7jprR/LLYRG9EpwMEuC168lDifDhoU+7WHBfgSra8XtEcJCtGBaoG0C3fuvYcRFJMzOrcuzYNYcI/rlA+A89CkvSV9jWD1Q9al1bkMysUzQwM8wCRyeUJiBcsNS96+AamJGMX83T9QdafAMK2HZGg5+k2rw5Xfrxo/BFxcXDbMkgCc0eSu7C/4zWLiyWC4vXcHKuoCZ1fjlx5f6ICZY88TEzURcHSNgcS3kAfAfwmosLsuNa0twR/4k7lHdkNPkbFez5Fo9WDczcG3EtN9W3TMsTl58Wzon1Q4RNPLzHLwk50ioQSWwarkurKBqhy3dNhUs01gGSyGDpZDBUshgKWSwFDJYb8v7b69+YOYsWYd4AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Retype Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NTypeInto_3" IsPassword="True" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" SecureText="[in_Password]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/register" DesignTimeRectangle="183, 456, 485, 34" ElementType="InputBoxPassword" FriendlyName="'INPUT password-confirm'" FullSelectorArgument="&lt;webctrl id='password-confirm' tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password-confirm' tag='INPUT' type='password' class='form-control' aaname='Retype Password:' /&gt;" Guid="52b2bae4-997b-4f0b-81da-2cea061a3910" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGDSURBVHhe7dgxisJQGIXR2f/aJCtIZyGCiAgBxZg33CEJWkxp/Itz4BZ5ef1H8tMAgJJEGgCKeov0MAyt7/vWdV3b7XZmZma2wdLd9DcdfrVGOi9yab/ft9Pp1M7ns5mZmW2wdDf9TYdfQ71GOgXPhev12u73e3s+n2ZmZrbB0t30Nx1OjxdrpFPvy+XSxnFs0zTNpwDAp6W76W86nB4v1kjnn/jtdhNoAPiC9DcdTo8Xb5HOJzcA8B3psEgDQEEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAUJdIAUJRIA0BRIg0ARYk0ABQl0gBQlEgDQFEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAUJdIAUJRIA0BRIg0ARYk0ABQl0gBQ1L+R7rquPR6P+QkA2Fo6nB4v1kj3fd8Oh0Obpmk+AQC2kv6mw+nxYo30MAx/9T4ej20cx/kUAPi0dDf9TYfT48Ua6ciLFDyX8k/czMzMPr90N/19DXS8RRoAqEOkAaCk1n4BOGRylpSr+hAAAAAASUVORK5CYII=" InformativeScreenshot="4d308aa8c86a680a1723e841cbefa77f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="183, 431, 121, 20" ElementType="Text" FriendlyName="'Retype Password'" FullSelectorArgument="&lt;webctrl aaname='Retype Password:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Retype Password:' tag='LABEL' type='' class='' check:innerText='Retype Password:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH0AAAAYCAYAAADXufLMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK2SURBVGhD7VftbcMgEO1Onqseo39RpA7irNAFoowRKTtQsDnuExunjZUWnnRSg4G7995xUt98R3PopjeIbnqD6KY3iG56g+imN4hueoPIpt/Pox+GwYzxfE+7KnFxfjhd04+jcfXO4PAQjz8G8NBd0kIBVabH2LooIxoez7yg6TH+s/EPm65EMUzkDTL66ZY+wN4cH/7zXezxdz/Rtdvkx7j3ffLTCc7pOoo5FcB0F/4iUDygDgyeUzaPyCm5hvqX0zr/NfHC+9OefEbWwmuH8+4EOdN30C5GuOsqTS88wN2mc/EhUhHKdOe/5L3E5HmFFi4Cil/NqVBnOgjJA4zVDbGEITYNdrdxF3BOtSyalHJhk6la5zyyKTF2m26HJEAEZQTwd04EAqXfqrmygEgy1zKfqcjJUBYjRmn05dc0fzdyUghOCrQ+1iDLfawpQK/86iV/YjrJl/cY06LEEbBtOilmVVAoSJouBOSvIMAUkI6/ipwMFS+AQPKGPUoPpgMKDMEakHJKesBodhdLD1kb5W/vsdagZosnRXG8I2li0JoBIIoynRbDycwAgZiodF9FTgbYX3ilCVI0W3xcX4JqESFqy/WgsW4+H2pJPMdgPm1y2yiu02GmR2TCBpmioIbpfMQVXsWe8b6KGtPlHny5JcEsfRBw3uAQY9YPc7A8O8a7ZTCewwb8ken0Ij0BeCgSc4AIlLB4LaIhaMCdmzkZ9piuY7mz9D3VzjiSIMZRXqAdTg1aG28GDNTJMn2bQ4D1AAM2TA/IBAtdrM7YBuczVJgIECes1//LZtSZUWN6ADUu1gR1ZIG0qEx0ZbzMh+eVCVIDZTy/yzY9gD0Y56ekUbXpz0axqYjpJRs7fhcHmQ6dLEZ7RDf9cDzfdDIGzZHcTT8ch433jtdBN71BdNMbRDe9OXj/DTR29PrhFWboAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NCheck Action="Check" DisplayName="Check 'unchecked'" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/register" DesignTimeRectangle="183, 509, 13, 13" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' class='form-check-input' aaname='                                     I agree to the updated Terms of Use and Privacy Policy.                                  ' /&gt;" Guid="6effac9d-9632-4876-9857-2036f0b4b5d8" InformativeScreenshot="8dd147b238757e4041f95251668d34b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="199, 506, 368, 20" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='                                     I agree to the updated  and*' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                                     I agree to the updated  and*' tag='LABEL' type='' class='form-check-label' check:innerText='I agree to the updated Terms of Use and Privacy Policy.' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheck>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'I'm not a robot'" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.recaptcha.net/recaptcha/api2/anchor?ar=1&amp;k=6LcEMPcUAAAAAApwf0CwWbPn6za_oASfYxsZVWQy&amp;co=aHR0cHM6Ly9hY21lLXRlc3QudWlwYXRoLmNvbTo0NDM.&amp;hl=en&amp;v=M-QqaF9xk6BpjLH22uHZRhXt&amp;size=normal&amp;cb=q58slp753ysc" DesignTimeRectangle="196, 569, 28, 28" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl name='a-f6n3l44talv5' tag='IFRAME' /&gt;&lt;webctrl aria-role='presentation' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='a-f6n3l44talv5' tag='IFRAME' /&gt;&lt;webctrl aria-role='presentation' tag='DIV' type='' class='recaptcha-checkbox-border' aaname='' /&gt;" Guid="dcf25ca7-ed2b-4a4b-a81f-df771bbf7eae" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABXSURBVFhH7dchEgAgCERR738rChfhFCQcAsmsa/jObDL8V1mZWcr9A4iIcvcys6vrRrcOwIv4rFsHYD5vv+kAAAAAAAAAAAAAAADgP4D8MJGfZqqJAVkbF5xK8jaSOfQAAAAASUVORK5CYII=" InformativeScreenshot="f5631ba2d0f82ad412b9fa4802846f5e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="236, 547, 152, 74" ElementType="Text" FriendlyName="'I'm not a robot'" FullSelectorArgument="&lt;webctrl name='a-f6n3l44talv5' tag='IFRAME' /&gt;&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl name='a-f6n3l44talv5' tag='IFRAME' /&gt;&lt;webctrl tag='LABEL' type='' class='rc-anchor-center-item rc-anchor-checkbox-label' aaname='I&amp;apos;m not a robot' check:innerText='I&amp;apos;m not a robot' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJwAAABOCAYAAADVTn9pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS8SURBVHhe7Z1LK21hGMf3FzDxAXwCGRgYSIkQSoRMSCIhExMxUJSSGDAwMCDCRC6ZYCCRUgYGInLLpSS53y+j5/R/61lnbWdjn845j1P7v+vX2t7L8rzr/a3nXe8aEBB++DH8BDY2NoQQKwJvb29CiBUUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkfCjc4OOgIVRdJNDc38zr8RTzhbm9vpbKy0ru4/4tw+CN2aWlp7hiq/l/zp8KhPwhVF4lQuC+gcH+XD4VTTk9PpaioSHp7eyUpKUmioqKkoqJCdnd3pampSaKjoyU2NlbGxsbk9fU1qC+AKIWFhTI+Pu76oz36XV9fu3r0WVpakuzsbAkEAu64vLzs6hALypRQE//09CTDw8OSkJDgYisoKJDNzc1f2gGNpaurS2JiYmRhYUFeXl5kcnLSG1tJSYlsb297fSBLe3u7GzPq0Q7xav3l5aW0tbW58wF8x9hw3dLT073Y8R1l2i9SCUs4XCxIcnZ2JoeHh07A+Ph4N1F3d3cyMzMjKSkpsre3F9QXYJLj4uJc//Pzc9nZ2ZGsrCyZmJhw9aurq5KcnCzz8/NOntnZWScPyrX/ZxluampKcnNzZX9/38kzMDAgZWVlntB+NJbGxkY5ODiQh4cHmZ6eloyMDFlbW5PHx0fp7++X1NRUN070gXCIB5JhrH19fS6e4+NjF29DQ4PU19e7awOqqqpcGeq0PzPcT8ISDllhfX3dK8OklJeXy83NjdcGUiJjaBsFk5yXlydHR0deGSagtbXVZbeWlhbp6OjwsiOO+Bnl+P6VcFdXVw79Ge0g0NbWVlA7rfPHomMeHR312tzf30ttba13HRArxqv1yGjFxcXuhsH5cPPgJtJ6vaE0XgoXTNhLqn/C0QZt0UfbfCYc+qONlukk6O9EhvT3wWTq+dH/M+EgyNDQkMtCunwhi4Vq/z4WHCGgZlOls7PTkwRH/zXBTYBsjTKMF/JBQq1HFs/Pz/euhY5V6yOd/1K4kZGRsIVDLDk5Oe6Z8quM+D6Wj4RD9lVJcPwd4bCsIsNRuNB8q3CYvD9dUt8LgaUfz2Ch2r+PRcfMJdWObxUO35FdIBQeyvGgPTc3J4mJiV7WOTk58TIGHtr1HEp3d7eUlpa6TQCorq4Oe0kF2DRgZ4ydLTYN2PHiGfB3Ng3IeBcXFy671dXVBW0aIGtNTY2r17JI5tuFQxZbXFx0u1w8f2HyMbma8Z6fn6Wnp8e9TsFSp+dQsBvFhKMerywgRGZm5i/LJAgVC3a2yHD6WgWvRfyvVRCn/7UI4lxZWfHqkfHw+/2vRfxLLF6xYEzY1YfayEQannCEWEDhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkUjphC4YgpFI6YQuGIKRSOmELhiCkB/JE+QqwI4H8VEGLDg/wAZBFfVhUu/AEAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[reCaptchaExists = True]" DisplayName="While reCaptcha has not been solved, do this" sap:VirtualizedContainerService.HintSize="632,490" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                    <ui:InterruptibleWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,325" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DelayBefore="5" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;v=M-QqaF9xk6BpjLH22uHZRhXt&amp;k=6LcEMPcUAAAAAApwf0CwWbPn6za_oASfYxsZVWQy" DesignTimeRectangle="337, 713, 48, 48" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='rc-imageselect' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl type='' isleaf='1' parentid='rc-imageselect' tag='DIV' class='button-holder help-button-holder' aaname='' /&gt;" Guid="d10f05f4-6fef-44ae-b98a-9ec0add879a8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIHSURBVGhD7ZjLSwJRFIf7G1u2bRXUrkUtgtq0qqAHtmgdRBHRA4pCg8gySaJ8FC5MJUt7mYlkJZzm4BHG8Qw4em5d4n7wWzh3DpxPvMe50wP/DCOkO0ZId4yQ7hgh3TFCumOEdEeNUOUR4OECIOUHeE4CVMu0oB5Zoa8KQHgRYGugNdE1ukktckLVd17EnjMf3awOOaHzJV7CmcwxFahBRigX4Zt3S7VEhfLICMXX+cbdkr+iQnlkhIIzfONuudmmQnlkhBIbfONuKcSoUB4Zobsw37hbKk9UKI+MUO0TwD/GN+/M5TIVqUFGCClleQF7cK8pRk4I+SgCnM7yMgoHgR1ZIaT2DXBvPcfdHgIkd60/0qA1BKK0qB55ISFW8AvpAC2FUKY3MA6+60260j6yQrWqtY+sx5pyHqCYrh8d7GmDhkwjU7FVWmmP7oVKufqG3x/hhwGmzYHQrQzSuVD2xJpoc7yAPb8og3QmhOcarnlnHDLYZOSl9acnJYN4F+Ia58LIYLN9R5OQeMvQVVkZxJsQNsk170xgor63iGAh3tR0f3Aa0tbgkJZBvAmFFngBLgejAK8pKmyVGgzNN32WkEG8CXk99+wNN41rp5S0DKJWCLMz1HT+cUpJyiDehToNvqcjGlLSMog3IUFQSgV/JqQKI6Q7Rkh3jJDuGCHdMUK6Y4T0BuAHP88KvybhwG8AAAAASUVORK5CYII=" InformativeScreenshot="15548df5f81076b82d0f1d1bf5bda8f7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="289, 713, 48, 48" ElementType="Button" FriendlyName="'BUTTON recaptcha-audio-…'" FullSelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl id='recaptcha-audio-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl id='recaptcha-audio-button' tag='BUTTON' type='' class='rc-button goog-inline-block rc-button-audio' aaname='Get an audio challenge' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJVSURBVGhD7Zi7qyIxGMX3f1YRX51ooY0PfOADxEaxFwsVtNRSwVJBFAsVCxUf6Hc5YTIMu9k710TZsOQHB4ck35kcmcSJv+g/wwTSHRNId0wg3TGBdMcE0p2PBdputzQcDqnRaFClUmHCNdrQ9yneGuhyudBsNqNCoUBer5c8Ho9Q6CsWi2zs9Xq1qt/D2wLtdjsqlUrk9/uFIUTCWNTs93vLRR3lQM/nk5bLJUWjUXui4XCY8vk8e7xWqxUdj0cmXA8GA9aHMXw8auEBL1WUA202G4rFYvbkMpkMLRYLut/v1og/Qd98Pqd0Om3XwQNeqigFwprJZrNsQj6fj+r1+ktrAmNrtRqrhUcul1NeU0qB2u22/Q1jIzifz1bPzzmdTuwR5D6dTsfqkUM60OFwoHg8ziaB9aCysLGNh0Ih5gVPeMsiHWgymdiPSr/ft1rl6fV6zAue0+nUan0d6UDNZpNNIBKJ0Hq9tlrlwQ7Id75Wq2W1vo50oEQiwW6OT2zJqsCDeyaTSav1daQDBQIBdnNsvd9t0T/ldrtRKpVinsFg0Gp9HelA/NUGW+27gBc84S2LdCDc+FOBIFlMIA6/8d/khqjGKVlMII5oEk65IapxShYTiCOahFNuiGqcksUE4nz3nwHkhqiG65/8sDpPqSK5IarhwhFCFulA3W7XPj6I5IaoBoInjhKySAfC2zH+sRFNCnJDVAOVy2V2ipVFOhB4PB40Go2oWq2y1xan3Ph9PDzG4zHzVEEpkI6YQLpjAumOCaQ7JpDumEC6YwLpjgmkN0Rfhf5ensAw8dAAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <uix:NClick ClickType="Single" ContinueOnError="True" DelayBefore="5" DisplayName="Click 'BUTTON recaptcha-reload…'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Timeout="7" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;v=M-QqaF9xk6BpjLH22uHZRhXt&amp;k=6LcEMPcUAAAAAApwf0CwWbPn6za_oASfYxsZVWQy" DesignTimeRectangle="241, 713, 48, 48" ElementType="Button" FriendlyName="'BUTTON recaptcha-reload…'" FullSelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' type='' class='rc-button goog-inline-block rc-button-reload' aaname='Get a new challenge' /&gt;" Guid="a518388a-b8ca-441c-a6d4-d8861fc559f9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJrSURBVGhD7ZhJq+owGIbPfxYH0IX+AXWlKOLWaePKeQAn1KVLcem0VHHAAb/LG5JSOL3aa3puwyEPBEubhjxN8uWLX/TL0EKqo4VURwupjhZSHS2kOlpIdbSQ6vyY0H6/p8FgQIVCgbLZLCu4Hg6H7NnfmM/n/OozHBV6Pp+03W6pWCyS1+slj8djWXw+H5VKJVZXcL/fqdlsUiKR4Hc+wzGhx+NBrVaLIpGIpYRVQd1ut8verVQqFAgE1BBChxqNBvvy6Kjf76d4PE71ep1WqxWdTidWcF2r1SgWixkjiHeSyaQh6boQplm73TZkgsEgTadTOp/PvMZ3INfr9diICBFlhNbrNYXDYdaZUChEs9mMP3nN9XqlTCajnhACADqCEZpMJvzuexAAMDWVEkL4FWshGo2yqfQORLNqtfpNRBRXhUajkdERBAU7IBJarR1RXBXK5/NGRxDB3oFNEx1+VcrlMq/9GVJC6XTaELpcLvyuu2ghM/865f4HUkJINIWQ3aBgxWazocViwcqrDdkOUkII2yJDQNg+Ho/8iX0Q6pEKoQ1Ev0/aMCMlBMwb63g85nftg81YfBRk4LJIC2G6iNQHeZzd1AegLtIlvIs20JYs0kJITnEEMCen+Oqvpg6mGRJYIYNso9PpsLZkkRYCOD7gWCCk8Is1heMDklckorfbjZbLJes41oy5LgIK2nACR4QAOoSREtPPTkFdpEJOyQDHhACmDPajXC5n6wiO0XNimplxVMjMbrejfr/P/hhJpVIsq0BExNo5HA68lvP8mJBbaCHV0UKqo4VURwupjhZSHS2kOlpIbYj+AMM2903wpsoRAAAAAElFTkSuQmCC" InformativeScreenshot="1503a8718afc119e4ea30b94aa802566.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="337, 713, 48, 48" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='rc-imageselect' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl type='' isleaf='1' parentid='rc-imageselect' tag='DIV' class='button-holder help-button-holder' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIHSURBVGhD7ZjLSwJRFIf7G1u2bRXUrkUtgtq0qqAHtmgdRBHRA4pCg8gySaJ8FC5MJUt7mYlkJZzm4BHG8Qw4em5d4n7wWzh3DpxPvMe50wP/DCOkO0ZId4yQ7hgh3TFCumOEdEeNUOUR4OECIOUHeE4CVMu0oB5Zoa8KQHgRYGugNdE1ukktckLVd17EnjMf3awOOaHzJV7CmcwxFahBRigX4Zt3S7VEhfLICMXX+cbdkr+iQnlkhIIzfONuudmmQnlkhBIbfONuKcSoUB4Zobsw37hbKk9UKI+MUO0TwD/GN+/M5TIVqUFGCClleQF7cK8pRk4I+SgCnM7yMgoHgR1ZIaT2DXBvPcfdHgIkd60/0qA1BKK0qB55ISFW8AvpAC2FUKY3MA6+60260j6yQrWqtY+sx5pyHqCYrh8d7GmDhkwjU7FVWmmP7oVKufqG3x/hhwGmzYHQrQzSuVD2xJpoc7yAPb8og3QmhOcarnlnHDLYZOSl9acnJYN4F+Ia58LIYLN9R5OQeMvQVVkZxJsQNsk170xgor63iGAh3tR0f3Aa0tbgkJZBvAmFFngBLgejAK8pKmyVGgzNN32WkEG8CXk99+wNN41rp5S0DKJWCLMz1HT+cUpJyiDehToNvqcjGlLSMog3IUFQSgV/JqQKI6Q7Rkh3jJDuGCHdMUK6Y4T0BuAHP88KvybhwG8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <uix:NCheckState DelayBefore="5" DisplayName="Check App State 'Verify'" Exists="[reCaptchaExists]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Timeout="7" Version="V1">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;v=M-QqaF9xk6BpjLH22uHZRhXt&amp;k=6LcEMPcUAAAAAApwf0CwWbPn6za_oASfYxsZVWQy" DesignTimeRectangle="527, 715, 100, 42" ElementType="Button" FriendlyName="'Verify'" FullSelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl id='recaptcha-verify-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl src='https://www.recaptcha.net/recaptcha/api2/bframe?hl=en&amp;amp;v=M-QqaF9x*' tag='IFRAME' /&gt;&lt;webctrl id='recaptcha-verify-button' tag='BUTTON' type='' class='rc-button-default goog-inline-block' aaname='Verify' check:innerText='VERIFY' /&gt;" Guid="63648fe7-ed74-4978-bdf9-226ec63230db" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAuCAYAAADEHVzQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALXSURBVHhe7Zy7ahtBFIbzHHmH9H4RdXkDl+rSBFVu4y4ujDqhJgIRDCagQpA0QoVBqIgNwS6ErSxSJNmSxrod79mdf707GuGAsfYU54cPvDOj3WW+ubmQ3pFGdFSQ8CSCqq0Zffj8l94X75QcYQfsAkkEqRw5sAskEeRrqOQHooKEgqggoSAqSCiIChIKooKEgqggoSAqSCiIChIKooKEgqggoSAqSCiIChIKkoOgIdUCfuKGftaduoqhPldNDBWLM7rkvz0ZX03C9p769YbGt3P69AX3tG36s/i6/kjjqKGbDbW7ti6YUyH9TucLMlw+MPQxXf7GILnMoIPWMnpm3NHP5YfddVR+czEMr23nThZUa88zlL/76xu3Gy5JdbJfkOmbzP1q7SmVToZUiUZHKOsc7/RctjWY3hgknyXuaEoddjF7pFJSPqLGhN9kRbUTvnY6dwtf/ZDOBly4ojPfPawgd2AkVO0MhmDMuPDzmVm1B5Cc9qCAyj1+6poaVVuG5W3X6N/CXx+P+PC+FU+blwSF7/W1x7OQZ4znHfcIkt8hoRkvc/3uKLouXKyi68tWYNvYznWTzDpXUECFH3bE72qzaw9KSz41dMNlg1U0YExvSgeo2yNIfoKKD9Tm3Tc8EBxiaVovqXyEetu57h70a5KdYW6W4fL2zZHsCNragxpj254J6Pja7mW8VJ6ifL8gOQq6sx0RLiF1O2ozo9WdIS6OwN+r6LRlrh923+PFJc6S2nu89XsAyVUQjrD9UXx66zTT9f8pKKn/Zw8I6ROXCnol9/EyxzELOs7UOTMkReaYne5EdGzyP4sKejWlq3i9N3/unTrbuZ7EHewRlDqFdZq8D6kg5Y1AVJBQEBUkFEQFCQVRQUJBVJBQEBUkFEQFCQVRQUJBVJBQEBUkFEQFCQVRQUJBVJBQEBUkFCQRpF/Dl4P3a/j6QxYyYAfeH7LQyIwKEh2iJxJqqpxHkIRRAAAAAElFTkSuQmCC" InformativeScreenshot="4a95e714b3fff3503f4de98858c43562.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </ui:InterruptibleWhile.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InterruptibleWhile>
+                  <uix:NClick ClickType="Single" DelayBefore="3" DisplayName="Click 'Register'" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/register" DesignTimeRectangle="183, 639, 78, 34" ElementType="Button" FriendlyName="'Register'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary' aaname='                                     Register                                 ' check:innerText='Register' /&gt;" Guid="3d857590-f3bd-470a-8792-3c2ee8d2b448" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAmCAYAAABXn8xMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJJSURBVGhD7ZoxbgIxEEVzlBSJxGVSpKMLh4gUKXWaVEmZE1BxCig4QBAVFZHoaJCQ6CYee8f22F5gYYhMNF96iljbG/vt2FDsDWhEoiKFwkR+L36g//oFd48vcPvwrBRAN+gIXcXxIrEBO93336D39AG9wadSwrhBR+gqlulFomUrsTRYyUBX6IziRaJhrcQOGFfojOJF4v4vDlBaQWcUFXkGKlIIFSmEihRCRQqhIoVQkULIiZysm9F5FpNC/xMZrcwNV7NiW8z7fHdUPylkRW6X8F66DjuYDpPrF+b/iRyMYboF2MzH4VpSvWnF2qprspkvYWH+Uh9WkcMlbGwvF/ofViIlmhO7zh7uzPyPNUypvbiO/fy9SCtxDSNqtzLCotxiQztJzUXi4uOHwD+nFWk/x/Nj83Bjz6ngy4u0EyZRTmpagWHRhfam6g6L5HCR2Dc/XvBe7gHvv9cxyIosJt1CLfFy0gXzRcZb21VvEy/NwUQmR0CcOkWyimyksQUemnA3kZ7oIbJzkonMKzJQtUhDUwn+fCx98TC6bO2oT4OV18wh39qHHmDNIg20/fwkbfXE1cHluv6nfNkU7hMJT+/Lx1+BSMTJCPJILiWtUJKHcT9/wlhWkdGWtokr1Z+L+UOhBHE1ibwYuMh951sdVCYyP0Nt9bZUek3UV5HpT5UrkIjUJ/JKUZFCqEghVKQQKlKIokh9ZaUjba+s6EtU3Wh9iUpf6zsS4wYdoavia30YbEDL2An3v5KDbtBRLBHDRGpOj4oUCcAvgUJgrnsWXlcAAAAASUVORK5CYII=" InformativeScreenshot="71c520a60453721c7daaaf4b6323b7c7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="168, 639, 258, 34" FriendlyName="'Register'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div' idx='3' parentid='register-form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='col-md-6 offset-md-4' parentid='register-form' tag='DIV' aaname='                                                              ' check:innerText='Register' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQYAAAAmCAYAAAAm7jW+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALuSURBVHhe7Z27ThtBFIZ5lBQg8TIp0tGFh0CKlDoNFSnzBFQ8BRR+gCBXrhyJzo0lJLrJnpmd3bn5smTQHG++T/qFvDebI8+3Z8bFnhkAgATEAAAZ1cTwe/XHXH3/Zc6/fDOfPt+QQqQ2UiOpFYBmqohBvujypb+4+mEuv96Zy+ufpJSuNlIjqRVyAM1UEYPcBa0USoOBZJFaSc0AtFJFDHIHpFOYkK5WUjMArVQRg8yfiwOA7IzUDEAriKFREANoBjE0CmIAzSCGRkEMoBnE0CiIATSDGBoFMYBmEEOjIAbQDGJoFMQAmmknhqdNf3bO6qlw/Dvz8NJd8OW5uC/M7fLtqONqBTGAZtqK4XVtbkvbzZtZ3CfbPziIAWBEnxiuH83i1Zjt8nHclnQXaUdhu4Ke7XJtVt1ff0zUMdyvzdYe5fDvYaXgCT5TtD2S1XP3Hhuz8PuL/8f+IAbQjH4xWClszIPfbwf3OEjd4B33e0nkYpDBHEolfp12DPZ1+Pmiz+HO/ZcOAzGAZpRPJZwk0g5hHMSF/X1XcFgMcWIxyLH5dEau5YS1/1rHBDGAZhQuPqYt+w6GwZ4O4HjQhlMJ1130DBJwicSQTDlCEAP8DyjqGHoJRAP20ACcJoYhgZSidYZIDHnHMAYxwLzRNZXo79TD+kJpITLKlKlEcEwfK4P+M+RTiUNCQgwwX9StMfh2fxh09u4e3r1jWbjj37P4WLhOIJD0uvH5iAHmjb7Fxy5ucI8y8LLwpB2El4Hgfq4cz406hmAKYQk7iWFdIZeMZxQBYoB5004MHxYZtPvWB3QEMYBmTlwM+RqE7S52dCKaghhAM6ffMaQ/LZ6AFCSIATQzw6nEaQQxgGYQQ6MgBtAMYmgUxACaQQyNghhAM4ihURADaKaKGHhE3cTwiDpQThUx8FDbaeGhtqCdKmLgMfhHpquN1EhqxWPwQTNVxCDIF13ugvKll/kzySO1kRohBdBONTEAwHxADACQYMxfsWzcBCuT9dwAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'The password'" Exists="[out_PwdAccepted]" sap:VirtualizedContainerService.HintSize="632,51" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="9420b606-b0b0-47c0-bacc-176fb58c1618" Version="V1">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/register" DesignTimeRectangle="183, 518, 294, 16" ElementType="Text" FriendlyName="'The password'" FullSelectorArgument="&lt;webctrl tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='STRONG' type='' class='' aaname='The password must be at least 8 characters.' check:innerText='The password must be at least 8 characters.' /&gt;" Guid="e6126797-e5d5-442f-b75c-eb6b2fb83c22" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASoAAAAUCAYAAAA6PXBGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUiSURBVHhe7VrtbRsxDO1Omatexcgm9gwdoMgYAbLD9XTSk8hH8nR2A+d+8AEEakvix+Mj0wD5tSQSicTJkYsqkUicHrmoEonE6ZGLKpFInB65qBKJxOkxFtXf6/L29hba5f5nuW7/vi4f7UniCTSeL/ev9sU58HW/xDl93pZL6f3v2/K6rD9WvcVaK/m+lsf9fNaMlttvOTOX5fbZjh7Fj/B9BKXG/6jrP5CL6tU44aKaDv3LB6cshX2tvXZRzfP5eK9zou3JWTnlosIi/ulFJYGl9S5pFs0CkebOEFC1/aLQ3Otd+KPman+rqebxT7HV1992tCE+N0LvNY34uIM3WoxUWxfXdbm2mNU3eCu2+p4sKpeTxvGIL2M7Q2RizHno5g2HGJyb4IBreKT39gcj8pd8VdM9rTD9W6H7o3UUx2vg887DkXx4iAffXu4V1BPJu1xUIi/N915eQxNXcLJpyOrgWA933sldIL9f0Xv0fm13mr+Q6xhPLCproeg3I0EIaGEJQ+JGXNVAhv9+DMjuOQhGjSJWrQfNqflHuXZxUMNqHNtgGAsEiOJc1v9yq+/MIAmeWy1HeDI980Rjahv2VO8jf1svjiwGMQR7NaKW3Xiz8yP5oM/QHn9mBLqY5Wv8s4FvP+fdeVjh97Cc23gb70GeoSZKfbNeBHhqUXEiVSwoJh4YRieux0GMoMGUV30fiWF2rvOVTVRNKLE6ubY2Ky4RD3fEO8Q5yslodvNhcgFnNjfEmPHEQ2/g1Nbz2vJ8vPcK8N+XpFMTQefc7vf349xbciYePncdMub5DI6GhbWzdjp/jV+Hb+jCrYff93yj+xXaJ97YHtc6OIbHse5D14joy5xrH8/96te+0WIc5BgLkvIGyBUYiwD+kGc3EtLkfMRvTcCvbYVYUZtuGEDDiRxFU9x3ijMLI0jU0DnkPsz6Mj4P0zz49Ql44lL1Pt77CnrXuXNqIqicWR/CdE1RPPRymP8uzsdyvFpQ+2G+HS3x4oFeqvGi8vOFL9jm04mpYReVji2txvXrnHHt4zWLKijeDOUK1RDOw80rIF4gPEf+7XfoUkfNCb/bt6aoOoHzLipfIDEP0f0OT8Tquwd7z/6Mf0drBJUz3ntWeJvGA6iOw/nYc0/bwDN84031x0uDP/v5ck7qc8gJ8Miiqnf264y49vGNi4oG9wB6oWYIa6FMLArnRdXh5i0QDr2IgzvFQF4fBFu7uSMJ777wDhzFIuWa45zhU3N2JAb7PDw4QqS6F4/13sRjLk2NFtpHux+IfR6PwUM5ycfRB/rocmp0Me5HSwM1+OesAS9f/m7opGoN55H2mBPKyYHh3YX16+EbF9VIjC0qpC8qttaA8FwRZ63Gm51XjBitri46TXCUS/fliGsvh6h5SrAFphex4NhqjDkPum9S3A2CEzbfhz2XiO7awavmccVD4Penin8ary+O4HyaT8RxNHzBfcQ7uqiMHVlU1vZ7CJ+Uc9FjlEfTKvdow4xrd46+eVEVcLGeyIA+lOGfJ0hyC2EgKx5SHW92LvLtxIw3PGR6GEiEAcGmhrvlTOLxRbVCCWb93vRlxoPMUfLfIGo7/ucJcY2cT6m11j04lb48P94Q8LIa/ZvHswOkeZjlwzGMPgz4vtNPoSXER02K66IN1XNHIwWyxuIbccScK7+rDQ5XyPd4o7S3mpOz4WuPa6f2An9RvQhmKBOJRMJBLqpEInF65KJKJBKnx48uqkQikTiCXFSJROLkWJZ/QqYo1yaNsqUAAAAASUVORK5CYII=" InformativeScreenshot="3384724162a9fe7ee3f1902232386795.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Register' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="183, 457, 485, 79" ElementType="InputBoxPassword" FriendlyName="'Password'" FullSelectorArgument="&lt;webctrl idx='2' parentid='register-form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='register-form' tag='DIV' class='form-group control-group' aaname='                                                                                                                                                                              ' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, -8, 1382, 784" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="8400e06802385ddbd9a0a3a44d754479.png" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" Url="https://acme-test.uipath.com/login" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="754,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Error)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;There was an error opening the browser.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message (Registering)" sap:VirtualizedContainerService.HintSize="788,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Registration done&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>
