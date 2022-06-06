@@ -84,7 +84,6 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
@@ -113,21 +112,11 @@
     </ui:LogMessage>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Get Product and Profile DataTables workflow" sap:VirtualizedContainerService.HintSize="548,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Get Product and Profile DataTables.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProfileDt">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ProfileDt" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="out_Total">
-          <mva:VisualBasicReference x:TypeArguments="scg:ICollection(x:Int32)" ExpressionText="Total" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProductDt1">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ProductDt1" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProductDt2">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ProductDt2" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProductDt3">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ProductDt3" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProfileDt">[ProfileDt]</OutArgument>
+        <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="out_Total">[Total]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProductDt1">[ProductDt1]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProductDt2">[ProductDt2]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ProductDt3">[ProductDt3]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -323,7 +312,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </p:WordExportToPdf>
-                        <ui:SendMail Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Private: Send SMTP Mail Message" Email="*@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="*" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="INVOICE" To="[CurrentRow(3).ToString]">
+                        <ui:SendMail Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Private: Send SMTP Mail Message" Email="adamstestimony@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="rnxzvsotlxkjmenq" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="INVOICE" To="adamstestimony@gmail.com">
                           <ui:SendMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                               <InArgument x:TypeArguments="x:String">["invoice" + Count.ToString + ".pdf"]</InArgument>
