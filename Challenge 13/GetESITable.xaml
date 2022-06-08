@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uoa="clr-namespace:UiPath.OmniPage.Activities;assembly=UiPath.OmniPage.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uoa="clr-namespace:UiPath.OmniPage.Activities;assembly=UiPath.OmniPage.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_outputDt" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>872,465</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>872,1462</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -108,40 +108,39 @@
       <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetESITable" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="GetESITable" sap:VirtualizedContainerService.HintSize="480,1397" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try to Extract Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try to Extract Table" sap:VirtualizedContainerService.HintSize="438,1305" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow extracts a table from a PDF using Document Understanding." DisplayName="GetESITable" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow extracts a table from a PDF using Document Understanding." DisplayName="GetESITable" sap:VirtualizedContainerService.HintSize="272,1078" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="p5:DocumentTaxonomy" Name="taxonomy" />
             <Variable x:TypeArguments="x:String" Name="docText" />
-            <Variable x:TypeArguments="p3:Document" Name="DOM" />
-            <Variable x:TypeArguments="p2:ExtractionResult" Name="extractedResults" />
+            <Variable x:TypeArguments="p4:Document" Name="DOM" />
+            <Variable x:TypeArguments="p3:ExtractionResult" Name="extractedResults" />
             <Variable x:TypeArguments="sd:DataSet" Name="dataSet" />
             <Variable x:TypeArguments="x:String" Name="strText" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message (Start)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Extracting ESI Table&quot;]">
+          <ui:LogMessage DisplayName="Log Message (Start)" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Extracting ESI Table&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -149,7 +148,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:BuildDataTable DataTable="[out_outputDt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+          <ui:BuildDataTable DataTable="[out_outputDt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -157,7 +156,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:BuildDataTable>
-          <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_3" Taxonomy="[taxonomy]">
+          <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="230,67" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_3" Taxonomy="[taxonomy]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -165,7 +164,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </p:LoadTaxonomy>
-          <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="C:\Users\TESSY ADAMS\Downloads\RPA_dummy_sample_form_.pdf" DocumentText="[docText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="DigitizeDocument_3">
+          <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="C:\Users\TESSY ADAMS\Downloads\RPA_dummy_sample_form_.pdf" DocumentText="[docText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="230,67" sap2010:WorkflowViewState.IdRef="DigitizeDocument_3">
             <p:DigitizeDocument.OCREngine>
               <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
                 <ActivityFunc.Argument>
@@ -181,20 +180,20 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </p:DigitizeDocument>
-          <p1:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope" DocumentObjectModel="[DOM]" DocumentPath="C:\Users\TESSY ADAMS\Downloads\RPA_dummy_sample_form_.pdf" DocumentText="[docText]" DocumentTypeId="Tessy.PDFScrapping.ExtractTable" ExtractionResult="[extractedResults]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="DataExtractionScope_3" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI6d59da3a2eb54ccfac11e84aa0730b50&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Tessy.PDFScrapping.ExtractTable&quot;:{&quot;FieldMappings&quot;:{&quot;Tessy.PDFScrapping.ExtractTable.ESITable&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Tessy.PDFScrapping.ExtractTable.ESITable.CheckBox&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable.CheckBox&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Tessy.PDFScrapping.ExtractTable.ESITable.ESIID&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable.ESIID&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI6d59da3a2eb54ccfac11e84aa0730b50&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI6d59da3a2eb54ccfac11e84aa0730b50&quot;:[]}}">
+          <p1:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope" DocumentObjectModel="[DOM]" DocumentPath="C:\Users\TESSY ADAMS\Downloads\RPA_dummy_sample_form_.pdf" DocumentText="[docText]" DocumentTypeId="Tessy.PDFScrapping.ExtractTable" ExtractionResult="[extractedResults]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="230,67" sap2010:WorkflowViewState.IdRef="DataExtractionScope_3" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI6d59da3a2eb54ccfac11e84aa0730b50&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Tessy.PDFScrapping.ExtractTable&quot;:{&quot;FieldMappings&quot;:{&quot;Tessy.PDFScrapping.ExtractTable.ESITable&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Tessy.PDFScrapping.ExtractTable.ESITable.CheckBox&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable.CheckBox&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Tessy.PDFScrapping.ExtractTable.ESITable.ESIID&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable.ESIID&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI6d59da3a2eb54ccfac11e84aa0730b50&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI6d59da3a2eb54ccfac11e84aa0730b50&quot;:[]}}">
             <p1:DataExtractionScope.Extractors>
               <p1:FormExtractor SerializedSignatureFields="{x:Null}" ApiKey="es4l9VaU0rJ/OfBBWAUO07sRqFTO7CzYjHz3MWzNaSbx/932dJKPAtYi7k5LRGgXSYhg+1sCPs+2/EWjliO9Lg==" DisplayName="Form Extractor" Endpoint="https://du.uipath.com/svc/formextractor" sap:VirtualizedContainerService.HintSize="234,161" sap2010:WorkflowViewState.IdRef="FormExtractor_3" MinOverlapPercentage="65" PersistenceId="UI6d59da3a2eb54ccfac11e84aa0730b50" SerializedSettings="{}{}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;Tessy.PDFScrapping.ExtractTable&quot;,&quot;FormId&quot;:&quot;e4dc8eee&quot;,&quot;FormName&quot;:&quot;ExtractTable&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,612.0,792.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;888-773-9647&quot;,&quot;Box&quot;:[42.744,299.939,74.668,16.728]},{&quot;Text&quot;:&quot;SERVICE&quot;,&quot;Box&quot;:[222.8201,236.4,61.4729,19.3763]},{&quot;Text&quot;:&quot;ADDRESS&quot;,&quot;Box&quot;:[222.8201,301.7509,68.3231,19.3763]},{&quot;Text&quot;:&quot;(Required)&quot;,&quot;Box&quot;:[290.313,77.994,44.9703,12.474]},{&quot;Text&quot;:&quot;Reliant&quot;,&quot;Box&quot;:[522.0121,25.2,24.8097,10.6214]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable.CheckBox&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]},{&quot;FieldId&quot;:&quot;Tessy.PDFScrapping.ExtractTable.ESITable.ESIID&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[307.8602,19.5319,162.3951,2.3951]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[307.8602,253.9271,178.0,2.3951]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[310.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[310.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[330.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[330.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[350.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[350.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:4,&quot;Column&quot;:0,&quot;Box&quot;:[370.2553,19.5319,162.3951,21.0]},{&quot;Row&quot;:4,&quot;Column&quot;:1,&quot;Box&quot;:[370.2553,253.9271,178.0,21.0]},{&quot;Row&quot;:5,&quot;Column&quot;:0,&quot;Box&quot;:[391.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:5,&quot;Column&quot;:1,&quot;Box&quot;:[391.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:6,&quot;Column&quot;:0,&quot;Box&quot;:[411.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:6,&quot;Column&quot;:1,&quot;Box&quot;:[411.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:7,&quot;Column&quot;:0,&quot;Box&quot;:[431.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:7,&quot;Column&quot;:1,&quot;Box&quot;:[431.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:8,&quot;Column&quot;:0,&quot;Box&quot;:[451.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:8,&quot;Column&quot;:1,&quot;Box&quot;:[451.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:9,&quot;Column&quot;:0,&quot;Box&quot;:[471.2553,19.5319,162.3951,20.0]},{&quot;Row&quot;:9,&quot;Column&quot;:1,&quot;Box&quot;:[471.2553,253.9271,178.0,20.0]},{&quot;Row&quot;:10,&quot;Column&quot;:0,&quot;Box&quot;:[491.2553,19.5319,162.3951,15.0]},{&quot;Row&quot;:10,&quot;Column&quot;:1,&quot;Box&quot;:[491.2553,253.9271,178.0,15.0]},{&quot;Row&quot;:11,&quot;Column&quot;:0,&quot;Box&quot;:[506.2553,19.5319,162.3951,6.69]},{&quot;Row&quot;:11,&quot;Column&quot;:1,&quot;Box&quot;:[506.2553,253.9271,178.0,6.69]}]}]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}}]" Timeout="100000">
                 <p1:FormExtractor.DocumentBounds>
-                  <InArgument x:TypeArguments="p2:ResultsDocumentBounds">
-                    <DelegateArgumentValue x:TypeArguments="p2:ResultsDocumentBounds">
-                      <DelegateInArgument x:TypeArguments="p2:ResultsDocumentBounds" Name="DocumentBounds" />
+                  <InArgument x:TypeArguments="p3:ResultsDocumentBounds">
+                    <DelegateArgumentValue x:TypeArguments="p3:ResultsDocumentBounds">
+                      <DelegateInArgument x:TypeArguments="p3:ResultsDocumentBounds" Name="DocumentBounds" />
                     </DelegateArgumentValue>
                   </InArgument>
                 </p1:FormExtractor.DocumentBounds>
                 <p1:FormExtractor.DocumentObjectModel>
-                  <InArgument x:TypeArguments="p3:Document">
-                    <DelegateArgumentValue x:TypeArguments="p3:Document">
-                      <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                  <InArgument x:TypeArguments="p4:Document">
+                    <DelegateArgumentValue x:TypeArguments="p4:Document">
+                      <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
                     </DelegateArgumentValue>
                   </InArgument>
                 </p1:FormExtractor.DocumentObjectModel>
@@ -213,16 +212,16 @@
                   </InArgument>
                 </p1:FormExtractor.DocumentText>
                 <p1:FormExtractor.ExtractorDocumentType>
-                  <InArgument x:TypeArguments="p4:ExtractorDocumentType">
-                    <DelegateArgumentValue x:TypeArguments="p4:ExtractorDocumentType">
-                      <DelegateInArgument x:TypeArguments="p4:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                  <InArgument x:TypeArguments="p2:ExtractorDocumentType">
+                    <DelegateArgumentValue x:TypeArguments="p2:ExtractorDocumentType">
+                      <DelegateInArgument x:TypeArguments="p2:ExtractorDocumentType" Name="ExtractorDocumentType" />
                     </DelegateArgumentValue>
                   </InArgument>
                 </p1:FormExtractor.ExtractorDocumentType>
                 <p1:FormExtractor.ExtractorResult>
-                  <OutArgument x:TypeArguments="p4:ExtractorResult">
-                    <DelegateArgumentReference x:TypeArguments="p4:ExtractorResult">
-                      <DelegateOutArgument x:TypeArguments="p4:ExtractorResult" Name="ExtractorResult" />
+                  <OutArgument x:TypeArguments="p2:ExtractorResult">
+                    <DelegateArgumentReference x:TypeArguments="p2:ExtractorResult">
+                      <DelegateOutArgument x:TypeArguments="p2:ExtractorResult" Name="ExtractorResult" />
                     </DelegateArgumentReference>
                   </OutArgument>
                 </p1:FormExtractor.ExtractorResult>
@@ -235,7 +234,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </p1:DataExtractionScope>
-          <p1:ExportExtractionResults DataSet="[dataSet]" DisplayName="Export Extraction Results" ExtractionResult="[extractedResults]" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="False" IncludeOCRConfidence="False">
+          <p1:ExportExtractionResults DataSet="[dataSet]" DisplayName="Export Extraction Results" ExtractionResult="[extractedResults]" sap:VirtualizedContainerService.HintSize="230,67" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="False" IncludeOCRConfidence="False">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -243,7 +242,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </p1:ExportExtractionResults>
-          <ui:MergeDataTable Destination="[out_outputDt]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MergeDataTable_3" MissingSchemaAction="Add" Source="[dataSet.Tables(2)]">
+          <ui:MergeDataTable Destination="[out_outputDt]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="MergeDataTable_3" MissingSchemaAction="Add" Source="[dataSet.Tables(2)]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -251,7 +250,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MergeDataTable>
-          <ui:LogMessage DisplayName="Log Message (Done)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Extracted ESI Table&quot;]">
+          <ui:LogMessage DisplayName="Log Message (Done)" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Extracted ESI Table&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -259,32 +258,15 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-            <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="272,244" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:OutputDataTable DataTable="[out_outputDt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[strText]">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:OutputDataTable>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[strText]" />
-              </Sequence>
-            </ui:CommentOut.Body>
+          <ui:OutputDataTable DataTable="[out_outputDt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[strText]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </ui:CommentOut>
+          </ui:OutputDataTable>
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[strText]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
