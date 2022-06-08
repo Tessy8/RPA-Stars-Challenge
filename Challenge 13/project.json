@@ -1,8 +1,9 @@
 {
   "name": "Challenge 13",
   "description": "Develop a PDF Scrapping bot that extracts the value of the checked box from a PDF file for each ESI ID on the PDF; Move it to an excel; Go to Stardex portal to update the status of the ESI ID for each ESI ID; Send the excel attachment to starschallenge@stardex.com.ng",
-  "main": "Main.xaml",
+  "main": "GetESITable.xaml",
   "dependencies": {
+    "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.DocumentUnderstanding.ML.Activities": "[1.13.2]",
     "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.IntelligentOCR.Activities": "[6.0.1]",
@@ -49,8 +50,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "20885551-90c9-454c-9b4b-c1bb6446225d",
+      "filePath": "GetESITable.xaml",
+      "uniqueId": "6ee1a732-08b2-45ec-a2e1-ab6c49b5f4ae",
       "input": [],
       "output": []
     }

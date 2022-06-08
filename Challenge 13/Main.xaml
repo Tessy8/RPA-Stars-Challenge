@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="872,465" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="872,960" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="43">
+    <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -22,36 +22,31 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-      <x:String>UiPath.PDF.Activities.PDF</x:String>
-      <x:String>UiPath.PDF.Activities</x:String>
-      <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
-      <x:String>UiPath.DocumentUnderstanding.Digitizer.Utils</x:String>
-      <x:String>System.Runtime.Serialization</x:String>
-      <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>UiPath.Vision.OCR</x:String>
-      <x:String>UiPath.OCR.Contracts</x:String>
-      <x:String>UiPath.OCR.Contracts.Activities</x:String>
-      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
       <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
-      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
-      <x:String>System.ComponentModel</x:String>
-      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
-      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
-      <x:String>UiPath.OmniPage.Activities</x:String>
-    </scg:List>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="39">
+    <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -63,42 +58,299 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.DocumentUnderstanding.Digitizer</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
-      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </scg:List>
+    </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PDF Scrapping Bot" sap:VirtualizedContainerService.HintSize="376,195" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Develop a PDF Scrapping bot that extracts the value of the checked box from a PDF file for each ESI ID on the PDF; Move it to an excel; Go to Stardex portal to update the status of the ESI ID for each ESI ID; Send the excel attachment to starschallenge@stardex.com.ng" DisplayName="PDF Scrapping Bot" sap:VirtualizedContainerService.HintSize="480,895" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="OutputText" />
-      <Variable x:TypeArguments="p1:DocumentTaxonomy" Name="taxonomy" />
+      <Variable x:TypeArguments="sd:DataTable" Name="outputDt" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="334,103" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[taxonomy]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetESITable workflow" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetESITable.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_outputDt">[outputDt]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteESITableToExcel workflow" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WriteESITableToExcel.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_outputDt">[outputDt]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log Message (Start)" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Entering ESI Details to Website.&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try to Use Browser" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[outputDt]" DisplayName="For Each Row in Data Table outputDt" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow.Body>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Automation For SMEs – Stardex" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="e41b0907-c617-49c8-a89e-80132ca9cdb3" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,508" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'ESI ID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="e41b0907-c617-49c8-a89e-80132ca9cdb3" Text="[CurrentRow(1).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://stardex.com.ng/automation-for-smes" DesignTimeRectangle="292, 321, 827, 50" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='your-id' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='your-id' tag='INPUT' type='text' class='wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control' aaname='' /&gt;" Guid="8c7a9bc0-e9c6-403b-b0bf-da5146185231" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAz8AAAA2CAYAAADpsicWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARQSURBVHhe7dw/byNFHMdhv2DaK1OmAxpEhUSFkJCuoKKhuAKJFgmJmj/3Ai65u8R27LDku/boJqONk3Mcztl9HumnnGfX43WqfLT2za6v/+0y63Xmup/V6vZcXZVZG2OMMcYYY8wRzaZV2oYpbZPOKc3Tx08bPfVmy6UxxhhjjDHGHP/UHdNGUB8/dfRksggAAPCcpWvqzkn3zOoFAACAMal7p4+f3BZyxwcAABibdE75GNws/8jn4wAAAMaofB9oln8sFqvtMgAAwLikd9I9s8Vi3c3n4gcAABin9E665yZ+Vt3lpfgBAADGKb2T7pmlgi4vr7bLAAAA45LeSff08XNxIX4AAIBxSu/08ZNbQOIHAAAYq/ROuucmfq7EDwAAMFqb+LnaxM/798vtMgAAwLikd8QPAAAweuIHAACYBPEDAABMgvgBAAAmQfwAAACTIH4AAIBJED8AAMAkPFn8zOeL7suvv+k+e3EyOCenn3dvzs63Z++W8/765/X20eNlv7z+0HVlct25/rvO/fa7H/pjRR63a7X6+K7fy08/v+rPAQAADu/J4+exf9CX+Pjt9z+2K4/30D3//Pt19+Lk9NZ55X3VgbRP/LS/l3JNu/YBAAD2J352yLXXkVMkivL8/IxDxE8MxRYAAHAYnzx+Ski8+uXX/g//8hGwBECJlLLWBkRZzzk5N7Lf6Rdfdd+//LE/NhQvHxM/9d53OVT8xH17AQAA+zmK+En01JFSR0cbKuVxvW99ftlvV0C0e96lnFcia99gqY/f93vJ+lCwAQAAj/Pk8VPCoZ3yx//QR73K3aD8bEMlP9s4qINiaL9WGzXttM/NvrvOET8AAHD8juLOTwmdYlf8DIVImRwb2q/10Ds/Q8pzE1jlNcQPAAAcv2cXP4mIXXEwtF/rMfET5fnlvR0yfnLefb8zAADg4z3LOz95nPUhQ/u1HhI/beDU2vd2qPh5yLUDAAD7Ofr4afcpUVLHRs4r3/MZ2q/1kPiJvGY+Tteel8d5fgmwQ8TP0PsCAAAO58njp/1eTpnynZmhWGnXSoRkv+xbQqHerwTK0H6toefXk2MlbLJPrrU+Xq6j2Cd+6v3K3BeKAADA/p4sfgAAAI6J+AEAACZB/AAAAJMgfgAAgEkQPwAAwCSIHwAAYBLEDwAAMAniBwAAmATxAwAATIL4AQAAJkH8AAAAkyB+AACASRA/AADAJIgfAABgEsQPAAAwCbfi5+LiarsMAAAwLumdbfysxA8AADBam/hZdbP5fBM/6/X19hAAAMA4pHPSO+mePn5yCygDAAAwJqV1+vhZLBI/m7s/WVyt3AECAACet3RN+qZ85C3dcxM/676CyoH8Twjv3i27t28X3fl5Zt6dnX2YN2+MMcYYY4wx5tNP3SnplvRLOiY9k64pN3jSO+me2XK57ivorgD6EEFDU17EGGOMMcYYY/6PGeqSTbfcHT6rbrlcd/8B5Zuc+uIviDIAAAAASUVORK5CYII=" InformativeScreenshot="d030978da7ee0f5a8a035145178b1658.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation For SMEs – Stardex' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="277, 246, 857, 225" ElementType="InputBox" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aaname='  ' css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div' parentid='wpcf7-f2140-p1981-o1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='  ' type='' parentid='wpcf7-f2140-p1981-o1' tag='DIV' class='col-lg-12 col-md-12' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <If Condition="[CurrentRow(0).ToString.Trim = &quot;START&quot;]" DisplayName="If START" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'START'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="e41b0907-c617-49c8-a89e-80132ca9cdb3" Version="V1">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://stardex.com.ng/automation-for-smes" DesignTimeRectangle="348, 526, 13, 13" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' class='' aaname='' /&gt;" Guid="608c9261-8cd1-4f41-b194-1b0c213041d6" InformativeScreenshot="66bb1daa0bcf4501f89d4f3983f217c2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation For SMEs – Stardex' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="290, 520, 60, 27" ElementType="Text" FriendlyName="'START'" FullSelectorArgument="&lt;webctrl aaname='START' parentid='wpcf7-f2140-p1981-o1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='START' parentid='wpcf7-f2140-p1981-o1' tag='SPAN' type='' class='wpcf7-list-item-label' check:innerText='START' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAAbCAYAAAAgVez8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMiSURBVFhH7Za7SytBGMXzN1gItoJYiFhYCIIYUaJgJWglgo0IQQQJCAoiKD7ARyOIijaaVhAJFiYigRARsRBCsLIKvglBxQc+zuV82Un27t1NNpJbGPODwXVmMt+cmTnfjAO/jKLgQqcouNApCi5Urq6usLy8bE/w8/Mz7u/vpfBbz+PjY6rNWOLxOD4/P7We2fn6+kIikfhrDI5v5DsxKTYcDmcW/P7+Lh1LSkrgcDik8Jt1bCMTExOpNmNpbW2VSeg5Pj5GWVkZBgcH8fr6qtUm4WL29/f/M05DQwMODg5kQUiuMcnw8LD8zSjY5/OhoqICfr9fVo0TXF9fR2lpKQKBgNYrjdfrlQkbT4Hi4+MDY2Nj8vv6+npcXFxoLUmUYApSPD09YW1tTeZxcnKi1abJFlNhSzADGwfj98bGhiyGkWzBLy8v0dLSgtXVVbS1tUl/PWaCycPDA3p6ejA9Pa3VpMmrYAZob28Xw9shW/D9/X04nU7EYjEsLCygt7dXdlBhJdiqnuRVcDQaRV1dnXhoc3NThCsfmZEpOO1A3/JI82jTyzU1NTg7O9N6WAs7PT1FdXX1t06VwpZgwgSwtLSExsZGSQoUv7u7a5oJMwWnX+lb5X1m487OTiwuLsr/RAmurKyEy+WS0tTUJElucnLSdNy8C9Zzc3OD2dlZSTo7OztabZpMwdlG397d3Wk1wMrKCjo6OuQqIUpwX18fDg8PMT8/j/LychwdHVmerP8qmPA64o/dbjdeXl602iRWwelT+pU7NjMzI4vGMjAwILvH402UYHWkuRBdXV0YHR1NXYNG8iaYKzo+Po7u7m45fgr6b2RkBENDQ3h7e9Nqk1gFj0QiqK2tlaBKLMvU1JQkMeVro2ASDAbliPMeNiOvOxwKheT+m5ubw/X1NW5vb7G1tYWqqirTCVgFp0/pV/3CKba3t+Wq4pVlJpjJzuPxyE6ro6/HrmBbLy3uMoU1NzenXjLGV48es+CcJH1Kv5rBZMabYG9vz1QwOT8/l4zOB4gxrl3BOb2lCT1k9OxPJOek9dMpCi50ioILnaLgwgb4A2ymphnR+LOmAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheck.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheck>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <If Condition="[CurrentRow(0).ToString.Trim = &quot;STOP&quot;]" DisplayName="If STOP" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'STOP'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheck_5" ScopeIdentifier="e41b0907-c617-49c8-a89e-80132ca9cdb3" Version="V1">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://stardex.com.ng/automation-for-smes" DesignTimeRectangle="409, 526, 13, 13" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl idx='2' tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='checkbox' aaname='' /&gt;" Guid="a6ea68d4-49df-4849-9867-5a0af38f68b0" InformativeScreenshot="da696fe427251e39a63d7a6fc35c3beb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation For SMEs – Stardex' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="361, 522, 48, 23" ElementType="Text" FriendlyName="'STOP'" FullSelectorArgument="&lt;webctrl aaname='STOP' parentid='wpcf7-f2140-p1981-o1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='STOP' parentid='wpcf7-f2140-p1981-o1' tag='SPAN' type='' class='wpcf7-list-item-label' check:innerText='STOP' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAbCAYAAAAzgqwIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMGSURBVFhH7Za/S7pBHMf9B1zdwrEpJCQIIiiQEgyi0SUoiKDNCFehllAMXZzcKnQSmtqKIGwpIoyIGrTfYCGCUYjp+8v7uud51J5Tv7VY+IID/dw9d/e6u889jwV/jJ5Qt9MT6nb+nlAsFsPT05P8+3uhA10s6XRa/FBRq9VQLBbx8vKCQqGASqUia4BqtSpirDMrpVJJtjTg89oz7Jf9N2PW79vbm6w1hw50EUfO7/eLYDP5fB7z8/OwWCx6GRoawtHRkajnQJOTkw319WV1dVW0I5xQJBKB3W5vaDMzM4OTk5MGMVW/bHt6eipbNaI5KIXK5bKIT09P4+bmRsQouLCwAJfLhcfHRxHT4IQXFxextbUlIwavr69YWlrCyMgI9vb2RN+Eu7CxsYG+vj4kEgldShOq74ttA4GA6CObzcqoQVshs05JLpdDKBTC1dWVjHyiEuIkuTOcyPX1tYwasH57extOpxOXl5ciphqbC8rFTCaTMmLQVogr4vF4sLa21pA3KlRCz8/PcLvdiMfjMvIVjsXjxN0iKiFVnLQV0lbOZrNhdnYW+/v74uioUAkdHx/D4XDg7OxMRsxhvvF59mM2cV4Um5ubGBgYwPn5uYwatBUilLq4uMDy8jL6+/thtVqFXPNxIyqhw8NDIaQdJxVmQoODg5iYmBCF47OkUik91+rpSKgerlAmk4HX6zVNTJUQd4ZC3CkVnCATnhfH+/u7LsQYTwYLF1a7TMz4byGNu7s7jI6OfklMlZCWH+Fw2HRlCW9MJruWZ61yRUVbIe1G4QurfiIPDw8YGxvDzs6OjHyiEiK8koeHh8UON8MLZ319HePj47i/vxexHwmpvhQ+Pj4QDAbFcdnd3RWD8MpeWVkRt1/z51IrIW3SzAHuAneZ/fE4MicZPzg4kK2/J6R/KfCH6luOk4xGo2JAvql5KczNzeH29la2MGglRJiDfKlOTU3pb35+Nfh8vi/5+B0h/VtO/m8Lk7WT91EnsJ9Wr4Cf0LHQb6En1O30hLqdnlB3A/wDnfts1IzFK3UAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheck.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheck>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <If Condition="[CurrentRow(0).ToString.Trim = &quot;VERIFY&quot;]" DisplayName="If VERIFY" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'VERIFY'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheck_6" ScopeIdentifier="e41b0907-c617-49c8-a89e-80132ca9cdb3" Version="V1">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://stardex.com.ng/automation-for-smes" DesignTimeRectangle="481, 526, 13, 13" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl idx='3' tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='checkbox' aaname='' /&gt;" Guid="7652bc2b-f457-4fff-8771-5d0c603d486a" InformativeScreenshot="c7488811be8c7287aa74777c592276fe.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation For SMEs – Stardex' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="422, 522, 59, 23" ElementType="Text" FriendlyName="'VERIFY'" FullSelectorArgument="&lt;webctrl aaname='VERIFY' parentid='wpcf7-f2140-p1981-o1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='VERIFY' parentid='wpcf7-f2140-p1981-o1' tag='SPAN' type='' class='wpcf7-list-item-label' check:innerText='VERIFY' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAbCAYAAADLYlf/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL5SURBVFhH7ZZBS3JBFIb9A276D9IqQkSExIUoJgSCULQLN9IuFEFIcOOiXVuJcOlWcBUkLiUIbRG0CIJwIYaooRRSWJ6P93CPXsdr37VFm+sDB2bOzJ0778yZM2MjC7MWb1XW4q2KtcXn83l6eXnRqtYAeqHbdnNzwwWV8XhMr6+vNBqNNM8ib29v3Of7+5v79Xq9BZPvPz8/5/z4Dv9QQX8ZU+r678QGgwF9fHxwGWOryP+M2qAXujns0+k0O/W8v79TLBaj8/NzmkwmmncGJnV8fEzZbJa+vr6oWCySzWZbMPhBrVZbaNvY2KBMJkP9fp/7APTf3d3liUtd/Q6Gfz8/P1MwGKTLy8u5OaIMH9ra7bbmnSF6l4oHhUKBwuEwdbtdzTPj4eGBtra2WBRQJ62Cftvb2/T4+Mh17CzKe3t7lEqleBeBkfifxkW73++nVquleYgFQzjajDAlHiu7s7ND1WpV88zAwkSjUQ5RsKp4oVKpkMvloqenJ66vKh7/xzwwHwHlSCRCnU5H88xjSjzOSzKZpNPTUw5tAedtf3+fLi4uNM/vxav+VcWDcrlMoVCId1x2vVQqaa2LmBIPsOter5eazabmIbq9veXdQugLmGQgEOAdxERh+qRmJB6hjoU9PDyk4XDIPiPxRuNKQgSoHxwc8I6jP8oSkUaYFq+uJJIJkuDJycn0nAL8VE1KerEQb7fbyefz8S7BnE4nL+zd3R33AUbi1XGNIuH6+prcbjcbIuEnTIsXsciuyPDLwkqdtArEOxwO7nd1dcV9E4nE9CoUjMT/NK4gt9PR0dE0ipZhWjxoNBrTMMcxkPOlx4x4fSRgd3Bb3N/fc134rXiQy+XY/sdK4mVVkeBwRuVu17OqeHknxONxHl/4U/HLXngqmMTm5iYbEp4K2tXEBJOwNkp49Xqdj4L+jP6F+OkLDwUzb3vc+R6Ph684XHUqmKSamGDwAyPxiJ6zs7O5R8pfiJ++7bW6JVmLtypr8VZlLd6qWFg80T8B0qzttGUbaAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheck.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheck>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e41b0907-c617-49c8-a89e-80132ca9cdb3" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://stardex.com.ng/automation-for-smes" DesignTimeRectangle="307, 596, 129, 49" ElementType="Button" FriendlyName="'Submit'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='default-btn' aaname='Submit' check:innerText='Submit' /&gt;" Guid="35b31ff3-9249-4639-bdb2-1f1351b1bd32" ImageBase64="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" InformativeScreenshot="682dea5b92833cb77d947e026b5ea5d5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation For SMEs – Stardex' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="292, 596, 827, 49" FriendlyName="'Submit'" FullSelectorArgument="&lt;webctrl aaname='                      ' parentid='mghgbnmuhxbtrwogrzohaaecwaojwridhwrq' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                      ' parentid='mghgbnmuhxbtrwogrzohaaecwaojwridhwrq' tag='DIV' type='' class='col-lg-12 col-md-12' check:innerText='Submit' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="2, 10, 1382, 784" BrowserType="Edge" IconBase64="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" InformativeScreenshot="6e6858bb598c131c086ea66f4a22b8c3.png" Selector="&lt;html app='msedge.exe' title='Automation For SMEs – Stardex' /&gt;" Url="https://stardex.com.ng/automation-for-smes" />
+                  </uix:NApplicationCard.TargetApp>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NApplicationCard>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEachRow.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ForEachRow>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Error)" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;There was an error with the browser.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message (Done)" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Done&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>

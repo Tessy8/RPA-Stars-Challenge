@@ -312,7 +312,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </p:WordExportToPdf>
-                        <ui:SendMail Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Private: Send SMTP Mail Message" Email="adamstestimony@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="rnxzvsotlxkjmenq" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="INVOICE" To="adamstestimony@gmail.com">
+                        <ui:SendMail Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Private: Send SMTP Mail Message" Email="adamstestimony@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="*" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="INVOICE" To="adamstestimony@gmail.com">
                           <ui:SendMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                               <InArgument x:TypeArguments="x:String">["invoice" + Count.ToString + ".pdf"]</InArgument>
