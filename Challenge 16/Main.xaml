@@ -1,0 +1,277 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="834,583" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Develop an Online Grocery Ordering Bot that downloads a .csv file from the grocery ordering web page; Add all the food from the.CSV file to the cart on the web portal; Place your order." DisplayName="Online Grocery Ordering Bot" sap:VirtualizedContainerService.HintSize="242,518" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="shoppingListDt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message (Start)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Start of Online Grocery Ordering Bot.&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke DownloadCSV workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DownloadCSV.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ReadCSV workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ReadCSV.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ShoppingListDt">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="shoppingListDt" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <TryCatch DisplayName="Try to add items to list" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Automation Anywhere Labs - Shopping List" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2e9d6296-a717-47ac-b322-790ed7c89df2" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,418" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[shoppingListDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Add Item to shopping list" sap:VirtualizedContainerService.HintSize="242,236" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Shopping List'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2e9d6296-a717-47ac-b322-790ed7c89df2" Text="[CurrentRow(1).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/AutomationAnywhereLabs-ShoppingList.html#" DesignTimeRectangle="143, 418, 1080, 38" ElementType="InputBox" FriendlyName="'INPUT myInput'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="82f98b5e-6c43-4dfc-8473-9fd78d34f29f" ImageBase64="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" InformativeScreenshot="7c13908b21076e7bfa2bfe19ef559736.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Shopping List' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target DesignTimeRectangle="143, 361, 1080, 48" ElementType="Text" FriendlyName="'Shopping List'" FullSelectorArgument="&lt;webctrl parentid='myDIV' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myDIV' tag='H2' type='' class='shopping-header' aaname='Shopping List' check:innerText='Shopping List' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Add Item'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2e9d6296-a717-47ac-b322-790ed7c89df2" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/AutomationAnywhereLabs-ShoppingList.html#" DesignTimeRectangle="143, 476, 140, 40" ElementType="Button" FriendlyName="'Add Item'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='btn btn-success btn-lg' aaname='Add Item' check:innerText='Add Item' /&gt;" Guid="a7226b79-4a48-48fc-a61b-8f7a9c90e2f5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJAAAAAsCAYAAACKTjG2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJqSURBVHhe7ZwxUuMwFIY5zvacYdu9EyUtHSeggD5HoGHgApnMpKRMqFJpUeJfluSnrHkZs9rZ75/5CmRFVvQ+S0Dhq0DIBUEgclEKgW5e7sL146/w4+EnwIToRnQkTxIoXrA+BFCTS5QEYueBuURXlCSQ1RGghYJA4EJBIHChIBC4UBAIXCgIBC4UBAIXCgKBCwWBwIWCQOBC+QcEug/Ph2GSMbuV0cfmaTfnM6uwHrqtN9b1iPp8hOfXrP31LewPb+G26Pt/oPQvUCzSMMdTtuHJ6mewqECb7bElINApVqceuH3/OE1wt51R6BIEWg6lc4HG4ysW97wQ06PO7F/taOvN1wVKUmfZv99XfYdUgo0PxKocZ5ij1dYjSt8CpWIPx5ae+skxVslTR4WYHIdlLhaoOf44X+uzyv7QGLeYSx8oXQuUFjs9xY3dIitcas+LOXm67YLOFejYZhxh2vHyotdt4/00Vi6/0dbpLqR0LNC4iFZB8oWdimb1tcdrSlkwR6BxHDO1xNlcz7YhkJM/HDfmLlIJVBahJdDYvqhAQz9LjLltPaF0K1BawDNJIjT+Iqp3K+uIWWIHao+DQN9Ea7c4kcRQ8f7m70DZWJN5Gd8Dgb6DVPysYDmpeOP1VDwrqQjnjxmfQEPiPZrHriEsAi1HWrxs4UtGEfIdqpDoc+HTz0URSok8/wdSe32/Y/tEovI7IBDAJwoCgQsFgcCFgkDgQkEgcKEgELhQEAhcKAgELhQEAhcKAoELBYHAhYJA4EJJAvGKO5iL+Yo7XrIJczFfshkTL7ATQYvoRi5PTCEQIV8NApELEsJvDx/XnxrSdmoAAAAASUVORK5CYII=" InformativeScreenshot="5d1f70afd9268544ef413b5cd53cddfc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Shopping List' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target DesignTimeRectangle="143, 361, 1080, 48" ElementType="Text" FriendlyName="'Shopping List'" FullSelectorArgument="&lt;webctrl parentid='myDIV' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myDIV' tag='H2' type='' class='shopping-header' aaname='Shopping List' check:innerText='Shopping List' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachRow>
+                <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Yes'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="2e9d6296-a717-47ac-b322-790ed7c89df2" Version="V1">
+                  <uix:NCheck.Target>
+                    <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/AutomationAnywhereLabs-ShoppingList.html#" DesignTimeRectangle="138, 511, 13, 13" ElementType="RadioButton" FriendlyName="'INPUT agreeToTermsYes'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='radio' class='form-check-input' aaname='' /&gt;" Guid="0bbed9dd-8c8e-4e44-b3a7-f15b000e551f" InformativeScreenshot="3930eb3d7f1f86308dea6adb4026e564.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Shopping List' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target DesignTimeRectangle="156, 506, 26, 24" ElementType="Text" FriendlyName="'Yes'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='form-check-label' aaname='                                 Yes                             ' check:innerText='Yes' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD/SURBVEhL7ZNhDoMgDIV3Lo4lR8Gb4EWMpzDxDh1QFEqLmW5jP8aXNNlA+uDxeMCP6MLN6MLNQOHZgFIK1LiEv4zVgj6bv8Fx4m3SQdzMceBgAzs40cG6X58jszoKKAPkXNENvqH3oHccLdXTfrYFjGDxMvoN7qXBrnEiQufzfgkWLrQcm2ED6gAbKxwJ8/m1xMOUjjHhZDkWWVBpksTi2hdCKAg7KilHN4oMeML3OL6HVPwuQxZ2S/zdlneTmkrF7T9KeBE3hM9Pwqi4d0kYm/AUhw2dvHNp/pqwg6WaBE4Kl9zrsrAHxVPRlNNXEUpIeUX4+3ThZnThZvybMMATQH1Ydpn+OwoAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NCheck.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheck>
+                <uix:NClick ClickType="Single" DisplayName="Click 'Submit Order'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2e9d6296-a717-47ac-b322-790ed7c89df2" Version="V1">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/AutomationAnywhereLabs-ShoppingList.html#" DesignTimeRectangle="143, 570, 140, 40" ElementType="Button" FriendlyName="'Submit Order'" FullSelectorArgument="&lt;webctrl aaname='Submit Order' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Submit Order' tag='BUTTON' type='button' class='btn btn-primary btn-lg' check:innerText='Submit Order' /&gt;" Guid="85ddb759-1b62-46e2-aae4-23e2666d7439" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJAAAAAsCAYAAACKTjG2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMcSURBVHhe7ZwxbtwwEEVzgVw0rct0OceeIoBLHyHtdrlAGpcpFXLBT3yOhpQ0SyKA/T/wAJsSKYrzRKnaL5uiPBEJpDyVRqBvP7ft64/U+F2IPdmN7AinCpQPeJ2EsLBEVSDtPOIs2RWkCuSdKEQPRAKJEIgEEiEQCSRCIBJIhEAkkAiBSCARApFAIgQigUQIRAKJEMhyge5lfOTt1T9vSOrz/kz/I3rj5/a/2/bC5/b4VQbg/HHOu8gtjTFrrJkgSwWy8iCXJegVeBbe+BDihEC1yJ08M+dPK9DL7zJwyq20vaViPHJ1MVYL5HFSIL7Pe+rDx+oDdHYXc5BAvHhOUbDIvPi7vixQOg9/57j90mJzYbH4XtsDI2hzXsl7aqvnE5j/0XHMk+/tnsDfWI/6kOWkOfYEanZ36p85usYMkHWvMMhSYp9OcFUgL7viOMnfMja16FGBTL/d8YQVwJ1jOdbIYwOBBmuBnX50jVkgS7+B3G8DcyOXBaL+dcHLebxwKCgXZdfmFKWKgAcAc/DAOSkonqXOqVyL59g8VDSH2k5t6I81ZaFtW/caE0GWCvSAFwGholwVqHnSTQF3/Y7a/qdAZtxeu93BmleXzcE1ZoKsF4jgHQnCXBWoKZRpt8Vqxhq1RQXy+hmsAL3iHraX/kOBSt/eWDNBlgmE14T9dkB7VKBTO9BIFq/NG/+MQAnM3/1GouO4v25xO9fr7UC8XpbuNSaCLBOId5u6a1DBrUBcALR5ArEI9ltmiUApvddTpo6VYiWq95GCMbrFpTlUOZz7rutK/e3D2r3GRJB1rzC+eRu6MRZtF5w3Gitl93SPZPHaaHxPoEeov2V4Dym8a46KOxzHmavNoaQTQZZ/A/FT+IhTiLqT5KS/b3YBuMCpsLyAvJVPFSjRFNSZd4MVLsfpc1Rce836P4/lSMS75IcSSHxMEAkkQiASSIRAJJAIgUggEQKRQCIEIoFECEQCiRCIBBIhEAkkQiASSIRAJJAIgVSB9BN34izuT9zpRzbFWdwf2czJB7QTiR7ZDZYnpxFIUa5GAilPZNv+AZobAwdWHzZJAAAAAElFTkSuQmCC" InformativeScreenshot="b6ac6bed8564d9c42c3b3fe76a83faf7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Shopping List' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target DesignTimeRectangle="143, 570, 1080, 40" FriendlyName="'Submit Order'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div' idx='3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='form-group' tag='DIV' aaname='                                      ' check:innerText='Submit Order' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAsCAYAAACJ86hrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARKSURBVHhe7dwxjts4GAbQvUAumjZlupxjThEgZY6Qdrq9QJqUKR1qIBK/KEq2GCnLdd4DPmCGFinZcKMPtP65AQAAADwZhQcAAADwdBaFx/vPt9u7T2nwo8g603dj+o4AAADA6ErhMd3Itm5yReooPQAAABhdKTzs7JBHM31XAAAAYGSl8Gjd2IpsBQAAAEam8JCuAAAAwMgUHtIVAAAAGJnCQ7oCAAAAI1N4SFcAAABgZAoP6QoAAACMTOEhXQEAAICRKTykKwAAADAyhYd0BQAAAEam8JCuAAAAwMguLzxe5/Wzr1/ax+0mzfnxO/PvZWv9afzn7fYhHruVb/MC0ffGcQfzktY4a60zAwAAACO7tPCoy47scGmxVUicldb6ucB4oPAopcSG37lmhQcAAAAcd1nh8eHfeeHkZR77+nMeOHrzfnXh0cqDhUd8n69pTnytFD6P7hJpROEBAAAAx11feMSb/UaJkEuBWBas5sbCIx2X/540530Pf0/msqA19paqUFkcN/uRxsrxIfn6772erzO+t9eU/Hf+PEopNEnXuFV4LHbPhPlT7p3jjAAAAMDIrvtJSy43ZvXuh5yjhUfLqkxomJ7FUSslRW/hUc1bvZ5SFxbNa5xfW5QdtVx47HwWeSfN3jnOCgAAAIzs0md4NJ9tUd14Hy48wvxSEMzHxRv9XEDEEmE11igRSnGRC5t8Da3kY5JcNtQp1zSfK17jogQK11DGw1ienz/TWMDUY5vnODEAAAAwsksLj7fEm/YslAhHC4/FToqqcFjNuzf2XxYe1bpb4/UOkcVPWWp3znFmAAAAYGTXFx4hccdHLjiOFh6LYqEar8uFxVp7Y72FR2telbqw2Coj7o7P83cLj3nu1lpnBgAAAEZ2WeGRfzZSP/sij/cWHg/t8NgrN1pjrfUfKTxS8vU3n/ERXs/vb7OM2Djf1g6P+HnV2TzHiQEAAICRXVZ4xN0cZVdGKCjqwiMWBnmsVXjE4qJ+FsclhUey9XOVKWWtpC49yvtI8hqbZUS4hlJmNN53+VzD/Lpc2jzHiQEAAICRXfeTlnizXgs34rEYWcnH7a2VrHZP7JUbrbGwfqvweBPm19l9D0nclbJXRuyu07jW2t1S5cQAAADAyC5/hkfc5fCmURyUnRqT9PdLfcMeC4lvyxv++NOOUwuPlEUB0bjuReqCZNKYc6+MqM9Z/o9rNUqPuAtF4QEAAMDf7o8+tFSeJwAAADAyhYd0BQAAAEam8JCuAAAAwMgUHtIVAAAAGJnCQ7oCAAAAI1N4SFcAAABgZAoP6QoAAACMTOEhXQEAAICRKTykKwAAADAyhYd0BQAAAEam8JCuAAAAwMgUHtIVAAAAGFkpPN59Wt/UirQyfVcAAABgZKXweP95fWMr0sr0XQEAAICRlcJjMt3I2ukhW5m+G8oOAAAA/g8WhQcAAADAM1B4AAAAAE/mdvsFzI/idHFkHhsAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <ui:LogMessage DisplayName="Log Message (End)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Online Grocery Ordering Bot has finished execution.&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, -8, 1382, 784" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="94fa4e99e05fb35e3b76c661ceaab02e.png" Selector="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Shopping List' /&gt;" Url="https://developer.automationanywhere.com/challenges/AutomationAnywhereLabs-ShoppingList.html#" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Error)" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;There was an error while adding items to the shopping list.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
