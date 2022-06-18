@@ -1,0 +1,223 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetDecodedText" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TextToDecode" Type="InArgument(x:String)" />
+    <x:Property Name="out_DecodedText" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>834,465</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetDecodedText_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow translates a Bulgarian text to English." DisplayName="GetDecodedText" sap:VirtualizedContainerService.HintSize="242,276" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message (Start)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Translating the text to decode.&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try to Open Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: bulgaria to english translate - Google Search" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="5075faf4-6a49-4a19-aab8-61ef9613b483" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,418" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TEXTAREA'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="5075faf4-6a49-4a19-aab8-61ef9613b483" Text="[in_TextToDecode]" Version="V1">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=bulgaria+to+english+translate&amp;sxsrf=ALiCzsZPcoycRozcVEMtANeG4kzuDVToBQ%3A1655591504038&amp;ei=UFKuYqL6Ad-Txc8P66GZ8A4&amp;oq=Bulgaria+to+E&amp;gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgAEEcQsAM6BAgjECc6BQgAEJECOggIABCABBCxAzoFCC4QgAQ6CAguENQCEJECOgsILhCABBCxAxCDAToKCC4QsQMQgwEQQzoECAAQQzoICC4QgAQQsQM6DgguEIAEELEDEIMBENQCOgsIABCABBCxAxCDAToLCAAQsQMQgwEQkQI6DgguELEDEIMBENQCEJECOgoILhDHARCjAhBDOggIABCABBDJAzoGCAAQHhAWOggIABAeEBYQCjoKCAAQHhAPEBYQCjoKCAAQgAQQRhCCAkoECEEYAEoECEYYAFDoEli3YGDFcWgCcAF4AIABhwWIAbsekgEKMi0xMi4xLjAuMZgBAKABAcgBCMABAQ&amp;sclient=gws-wiz" DesignTimeRectangle="74, 476, 333, 60" ElementType="InputBox" FriendlyName="'TEXTAREA tw-source-text…'" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' class='tw-ta tw-text-large q8U8x goog-textarea' aaname='' /&gt;" Guid="5d14c68b-ac8e-4388-aa76-f815cd522d9b" ImageBase64="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" InformativeScreenshot="4007f945e4c296088668121de1327791.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='bulgaria to english translate - Google Search' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target DesignTimeRectangle="50, 384, 453, 63" ElementType="Button" FriendlyName="'Bulgarian'" FullSelectorArgument="&lt;webctrl aria-role='button' id='tw-sl' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' id='tw-sl' tag='DIV' type='' class='j1iyq' aaname='' check:innerText='Bulgarian' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <uix:NGetText DelayBefore="2" DisplayName="Get Decoded Text " sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5075faf4-6a49-4a19-aab8-61ef9613b483" Version="V1">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=bulgaria+to+english+translate&amp;sxsrf=ALiCzsZPcoycRozcVEMtANeG4kzuDVToBQ%3A1655591504038&amp;ei=UFKuYqL6Ad-Txc8P66GZ8A4&amp;oq=Bulgaria+to+E&amp;gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgAEEcQsAM6BAgjECc6BQgAEJECOggIABCABBCxAzoFCC4QgAQ6CAguENQCEJECOgsILhCABBCxAxCDAToKCC4QsQMQgwEQQzoECAAQQzoICC4QgAQQsQM6DgguEIAEELEDEIMBENQCOgsIABCABBCxAxCDAToLCAAQsQMQgwEQkQI6DgguELEDEIMBENQCEJECOgoILhDHARCjAhBDOggIABCABBDJAzoGCAAQHhAWOggIABAeEBYQCjoKCAAQHhAPEBYQCjoKCAAQgAQQRhCCAkoECEEYAEoECEYYAFDoEli3YGDFcWgCcAF4AIABhwWIAbsekgEKMi0xMi4xLjAuMZgBAKABAcgBCMABAQ&amp;sclient=gws-wiz" DesignTimeRectangle="599, 476, 411, 222" FriendlyName="'You become'" FullSelectorArgument="&lt;webctrl id='tw-target-text' tag='PRE' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tw-target-text' tag='PRE' type='' class='tw-data-text tw-text-large tw-ta' aaname='' /&gt;" Guid="2b02c179-e145-473d-a43c-70dce13e5f07" InformativeScreenshot="4347b2ffa1837de022d8caf65ab2625b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='bulgaria to english translate - Google Search' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target DesignTimeRectangle="575, 384, 453, 63" ElementType="Button" FriendlyName="'English'" FullSelectorArgument="&lt;webctrl aria-role='button' id='tw-tl' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' id='tw-tl' tag='DIV' type='' class='j1iyq' aaname='' check:innerText='English' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NGetText.Target>
+                  <uix:NGetText.Text>
+                    <OutArgument x:TypeArguments="x:String">[out_DecodedText]</OutArgument>
+                  </uix:NGetText.Text>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <ui:LogMessage DisplayName="Log Message (End)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Translation successful.&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="272,153" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[out_DecodedText]" />
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, -8, 1382, 784" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="2e1fb3def8b0cc660cc6d38ef90b1efb.png" Selector="&lt;html app='chrome.exe' title='bulgaria to english translate - Google Search' /&gt;" Url="https://www.google.com/search?q=bulgaria+to+english+translate&amp;sxsrf=ALiCzsZPcoycRozcVEMtANeG4kzuDVToBQ%3A1655591504038&amp;ei=UFKuYqL6Ad-Txc8P66GZ8A4&amp;oq=Bulgaria+to+E&amp;gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgAEEcQsAM6BAgjECc6BQgAEJECOggIABCABBCxAzoFCC4QgAQ6CAguENQCEJECOgsILhCABBCxAxCDAToKCC4QsQMQgwEQQzoECAAQQzoICC4QgAQQsQM6DgguEIAEELEDEIMBENQCOgsIABCABBCxAxCDAToLCAAQsQMQgwEQkQI6DgguELEDEIMBENQCEJECOgoILhDHARCjAhBDOggIABCABBDJAzoGCAAQHhAWOggIABAeEBYQCjoKCAAQHhAPEBYQCjoKCAAQgAQQRhCCAkoECEEYAEoECEYYAFDoEli3YGDFcWgCcAF4AIABhwWIAbsekgEKMi0xMi4xLjAuMZgBAKABAcgBCMABAQ&amp;sclient=gws-wiz" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Error)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;An error occurred with the browser.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
