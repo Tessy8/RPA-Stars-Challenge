@@ -1,0 +1,181 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadCSV" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="834,465" sap2010:WorkflowViewState.IdRef="DownloadCSV_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow downloads a CSV file from Automation Anywhere website. The default download location is the Downloads folder." DisplayName="DownloadCSV" sap:VirtualizedContainerService.HintSize="242,306" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message (Start)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Downloading file...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try to download CSV file" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Download file" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Automation Anywhere Labs - Customer Onboarding" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="ae869075-b141-4eb3-ace9-df826c1ff8f6" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,145" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Download CSV'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ae869075-b141-4eb3-ace9-df826c1ff8f6" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 483, 169, 41" ElementType="Text" FriendlyName="'Download CSV'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' class='btn btn-orange' aaname='Download CSV' check:innerText='Download CSV' /&gt;" Guid="69bf73ce-f8a1-4ac6-a451-5ed6b3cb7ed5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK0AAAAtCAYAAADcH+ubAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN6SURBVHhe7Z1BihsxEEVzo6xyoZwhi1xitnMMLyaQO8wscgLj7AJeeOOAFwbTGbml0lep5J4xmZYK/ocHg1qtVkuvq00I9qeJYZyF0jLuUkn799fP6c/j1+n39y/T7ttnQlYnuBccDC5aKaQ9/HgwByGkF8FJHZE2WG2dREhvdMUVaUM5tk4gpDfBTYxIy8+wZFSCmxiR1upMyChgKC1xAYbSEhdgKC1xAYbSEhdgKC1xAYbSEhdgKC1xAYbSEhdgKC1xAWYIaQ/bY5xFnfOLfc7aHPdrzedhOp3ClY7T6ck6DrzsrnPCNOen+56ep0M8Juu/39TnvWc+HwhmeGlDLtv+/2VyNGnTfMxo+Qy5r0niPj1Pl2vDbjrieXgMJO8BZihptZxZZmMxV2YoaUXCsk8W2W6X9RVJc7/W/a1337fBDC1twFw0WfQUkNqoDCI/tOG4+e8kTAxULHvzNtN5bo4xRFt8hZfXvGw3i9K2RZrH0u2p/81qmeZZVOl0f/2LBmZ4aatjrVedbLKuVChFWvyyj2yqkSRAJUr14OQs99HzsNKSVt/fG9BrZn52NQQ1Re4Dxo2088LBJhtVMLUVgilxirZYeepKlK+T5qSlrc+xK3pJEiMKJ3MDAUWwlpRqjOq4jcwNotdb78N8j++7zkeBcSZt43Ulmx/bsULEvy/73bVPuIa9OeX1W31maVvVriVUak+Jx81KtlRJ75N2Bh76GHkrBPBhVg92Oc76YNx8pp2PvVFa6HeWahHbTq9tSopSyJn/Im218er4XdLaD9nMfG4hokmWtxwjX/u8b+9JDzBjSyuvyiRjXmzc6LSJZltIlMZqw75vlxbGgnHSOfp6cl/ycCmpUVC557a0rT5y/aJdPSixbzW3SB4jRBWHjmCGkraVYmFlw3TUJmO/JDO04Zj3SJuFq5P6tO8rzRUewirqfhTy0FgpKvetvtY1kuSvUeP0BDO4tI2Nq4SxKkJe/Fq0cty7pL0CG3yNnm8pZRhLj1v3Wf4nL8F4gMv5Zeo1bo9v32tfMENIS8gSGEpLXIChtMQFGEpLXIChtMQFGEpLXIChtMQFGEpLXIChtMQFGEpLXIARafn9tGRUmt9Py28CJ6PS/CZw/uYCGZXmby6E8NdtyGjc/HWblGB1KMf8jEt6EdwLDuoKm1JJyzCjh9IyzjJN/wBufnFLwEVZAwAAAABJRU5ErkJggg==" InformativeScreenshot="18c45d2acd2ee75b135011fc67f3e38e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="143, 483, 1080, 41" ElementType="Text" FriendlyName="'Download CSV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;p' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='P' class='lead' aaname='                      ' check:innerText='Download CSV' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAtCAYAAABCr3vOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAStSURBVHhe7d09btw4AAbQvdFWuVDOkCKXcJtjuEiA3CEpcgLD6QK4cOMALgwY2nBGpCiK8piDzUg03gM+wJA4+hmr4WfO+J8BAAAA4I1ReAAAAABvzqLw+P3j6/Dr0/vh58d3w+2Hf0UunvDshWcwPIsAAABwjlnhcf/lqjoBFdkq4ZkEAACAVqnwCH9Nr004RbaOlR4AAAC0SoVH+AhBbbIpsnXCswkAAAAtUuHhOztkrwnPJgAAALRIhUdtoimylwAAAEALhYd0EQAAAGih8JAuAgAAAC0UHtJFAAAAoIXCQ7oIAAAAtFB4SBcBAACAFgoP6SIAAADQQuEhXQQAAABaKDykiwAAAEALhYd0EQAAAGixi8Lj/uZhvIqlp+/111w6D3eXup6r4fExnOlhePxc25/l++3hmnKr11eOffw23I/70vt/d718Xcv1/MUAAABAi90XHsHzzVX1dZfM3gqPeD1VZXFRKUYOYunx+dvwfNhwOzzkr8v3ZQXJFgEAAIAWuyo8ymJjKkIqE/ELZ1eFRyow5mOmEqS+Pb2/qeCYxq3d3+Xu++UAAABAi10XHiHVCXeasEdZIVJZkZCKk2xbftzp51g2jLKVEvWJ//XwdNw8qpQUJz92Mj/n8831ycJjvYQ4HqvcHse/uEojXudsdUi8v+0LJwAAAGix+8JjsW/t4xmpIChXSOSFQpy4z8ekQqAilgeLkmFRukxOjymvo2at8Cjv7xUp37Pqd3VUyo1qCbJNAAAAoEU3hcdx0p0VBJXVF3HbrJwoSofZtnHFw3IFxHSeeE1l4bF8TX0lyTyxVBjLinRtWXmRyom1QqM4xmJ/PenaMuX7Xf4ejvfYdp6/FQAAAGjRWeGx8hGLVByM2/OVCePPz3e3hzHhHPWJ/fz8a2OOhcfaKou1MiJuj8b91RUUp1ZwnFd4HJMVRqO0GiUkL4KKUmh+nMsHAAAAWnTzHR7Hfa8sPLJxT2mVwrjt8c+2olCYlxnH/C+Fx6I0KPafVXjUC5pjjq+dlRjVTMXH/BjTuZ/u1n8nWwQAAABa7LvwSB/viEXGNFHPS4JYAFS3BWPhUNuWj3194ZEdKztOfE15vnRfqZgpCpG83Ej3vF54rI1J559tL0qWcezi2sZMxwiKYmnDAAAAQItdFR5rZpPyNNkvFQVBPi4WIdm2/JjnFB5TWbEUx6zfV7zWrMBZKO6nSCpcamYrRl4aWztHLEj+KI6zZQAAAKDFzguPlUn/omyorUSYJu7LkmJ+3LMKj0OycuCgvN55oRGOVR53Oeb0v6VNqZQ/8+ubsnyP149fv9dtAwAAAC12UXiInAoAAAC0UHhIFwEAAIAWCg/pIgAAANBC4SFdBAAAAFooPKSLAAAAQAuFh3QRAAAAaKHwkC4CAAAALRQe0kUAAACghcJDuggAAAC0UHhIFwEAAIAWqfD4+fFddaIpsnXCswkAAAAtUuHx69P76mRTZOuEZxMAAABapMLj94+v1cmmyNYJzyYAAAC0SIVHcP/lqjrhFNkq4ZkEAACAVrPCIwh/TQ8fIfCdHrJVwrMXnkErOwAAADjXovAAAAAA6J3CAwAAAHhjhuE/rCmiIQvu2OgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 784" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="b32d6c36e10036887d5f5cfcd869d7d9.png" Selector="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" Url="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <ui:LogMessage DisplayName="Log Message (End)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Downloaded file.&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Error)" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;There was a problem while downloading the CSV file.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

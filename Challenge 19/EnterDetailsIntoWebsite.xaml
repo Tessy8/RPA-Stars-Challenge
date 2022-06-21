@@ -1,0 +1,472 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="EnterDetailsIntoWebsite" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="834,465" sap2010:WorkflowViewState.IdRef="EnterDetailsIntoWebsite_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="52">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow takes value from a CSV file and enters it into Automation Anywhere website." DisplayName="EnterDetailsIntoWebsite" sap:VirtualizedContainerService.HintSize="242,382" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="OutputDt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message (Start)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Entering details into website.&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try to read CSV file" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <ui:ReadCsvFile DataTable="[OutputDt]" Delimitator="Comma" DisplayName="Read CSV file" FilePath="Input\MissingCustomers.csv" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ReadCsvFile>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Error)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Could not read the CSV file.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch DisplayName="Try to open browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Automation Anywhere Labs - Customer Onboarding" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="df00f800-c385-49e9-a0cf-e4a3ca993d81" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,236" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OutputDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT customerName'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Text="[CurrentRow(0).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 326, 1080, 38" ElementType="InputBox" FriendlyName="'INPUT customerName'" FullSelectorArgument="&lt;webctrl tag='INPUT' id='customerName' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' id='customerName' type='text' class='form-control' aaname='' /&gt;" Guid="3630f17c-9307-494b-876c-19ecedc1fe31" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAqCAYAAABfqkt2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASqSURBVHhe7dw7bhs7GAbQu+C0KdO4S5fOpYusIIWbbCCA4SUEzh6sQuXcef0USVGKLenieojzAQewZjhPV/xA6Z9BRERERERERKSzKDxEREREREREpLsUhcd+vx92u93w+voKAAAAsAlTlzF1GnlS4THtaB0EAAAAsAV56ZEKDys7AAAAgC2buo1IKjxaAwEAAAC2JKLwAAAAALoRUXgAAAAA3YgoPAAAAIBuRBQeAAAAQDciCg8AAACgGxGFBwAAANCNiMIDAAAA6EZE4QEAAAB0I3KTwuP347fh0+cvme/Dr8a46z0P919/Dr+b+z6op+/zO7l7/NPY/2f48XV8Xw/PjX0AAADAe0WuLDyeh/up4KhKiChA7p/ysdf79XB8rQ9vLTw+ff42/Hip9ys8AAAA4JYiVxUe5wqIed+NV3psu/Bo3bvCAwAAAG4pcnnh8fJzuDu3iuPpOSs7lol9/bWOowJjPWcqCFJhshYDaXu+WmJdZXJ0zGK+xsN4L3MBU44ptjVKh/KYaoXGVGSM9/4jxpwqYubCYzz2cSk+yvfVKjzqZ632z+9oPN9T+a7md1u8v+MVJfVXj269AgcAAAD+b5HLC495Iv/WFRxvKDwaBUqxv/E5TfCzQmApKQ73FaVFunZWCtTb8vurzxMrNdL9xcqNRlFSiMLjpXHOo8KjUYDU95bu//gZj7cdPi9lR1aCNJ4ZAAAAti5yceGxTKDzyfs5byg8smIgH5Mrxjc+L5YVH3GteuKfSoXiuKpoWMuAegXEe+93lo+LsuJUwTHvr8/ZvrfiXa7lS3G/xf2V7yS8738IAAAAH1/k4xQe2VdT6nHt8VURcGJceUy2vziuPNfJZ5tLhHV7/vc5RfEQ545y4vQzpHIkVIVHUW60ipL8utU9nD0OAAAANizycb7Sko1Lk/xqYt8qPFrlyG0Kj/Fz03WFx+EZp2PL6x49/7y9GnNx4ZGdt6DwAAAAoB+R/+5HS4v9y6T974VHLib/hwl5q/Aoi4ts3Lr98sLjL2XGxYXHaH03d4/P5TO0xt6s8KjPCwAAAP2JXF54jM4VFvO+VAi0yol128nCY7J8zSUm9/X12tdv/IbHOwuPUwXBXITEueYxFxYeo2IVyXrd4vxhLTiuKjxax6Qxb3gGAAAA2IjIVYVH+t2NapIek/l8gl0WINmEvygQykn7MuZwzFF5UZcBMebcMbHtXOERY/IyoC4Nriw80jXz+5/H5u8tGxPPcEnhMX5e3mU+pv1DpgAAALBlkSsLj8VSDuRaRUA2eZ+Mk/yjFQ3rhP+gmsRHwTE6TPgPP3Y6a5UbFxQeaVx27qJkuLrwiH3ldVMRtJoKiaJ8ubDwmLTOncYDAABAByI3KTwAAAAAPoKIwgMAAADoRkThAQAAAHQjovAAAAAAuhFReAAAAADdiCg8AAAAgG5EFB4AAABANyIKDwAAAKAbEYUHAAAA0I2IwgMAAADoRkThAQAAAHQjkgqP3W7XHAgAAACwBVO3EUmFx36/bw4GAAAA2IKp24ikwmPKtMNKDwAAAGBLpi4jLzumFIWHiIiIiIiIiEgPUXiIiIiIiIiISGcZhn8BAbsQSt6b9UsAAAAASUVORK5CYII=" InformativeScreenshot="4c0f48a2656eb893ab3b970ec8c32b84.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT customerID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Text="[CurrentRow(1).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 384, 1080, 38" ElementType="InputBox" FriendlyName="'INPUT customerID'" FullSelectorArgument="&lt;webctrl id='customerID' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='customerID' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="0ff712cb-ef17-41aa-9879-ca8ad1056829" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAqCAYAAABfqkt2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPaSURBVHhe7dy9btpgGIbhHnDXjF26deuWMUOPIEOXnkCkKIcQpecQBkYX27zmtfkgGEKFP12PdElNMD/p5ls2XxozMzMzMzMzs8omeJiZmZmZmZlZdRsFj/V63axWq+b9/R0AAABgEdqW0TaNvCF4tA+UngQAAACwBDl6DMHDlR0AAADAkrVtIzYEj9KBAAAAAEsSEzwAAACAasQEDwAAAKAaMcEDAAAAqEZM8AAAAACqERM8AAAAgGrEBA8AAACgGjHBAwAAAKhGTPAAAAAAqhH7lODx+vtn8/XuW/KreSocd7mX5v7Hn+a1+NiNevvTfL/72Ty+xe/+No8/8v9VsrS/DQAAAG5M7MLg8dLcF07UI4DcP+djL/f0sMAocCh4PLyMj9vo/r6rxSIAAACoX+yi4HEsQFzj5L324HH8MQAAAOAjsfODR3cif+QqjueXFDv6E/nvv/+OjtkLGNvX3N3mEcFkehtIDgjbq0z2ntPr3uNh81m6ADM+ZvS7g1dchPyeG8+/us/+GMccCjGzgsdG+7rT9wIAAABOEjs/eHQn5qdewXFC8CgElNHjhZ+HQJLiQR8pdp8rosXw3imqTH+XP9/0dfq/N32+7c8fXo0xN3gU/h8AAACA08TODh7993R8YvA44cqGafCY/tzrr/iI99oLFxEcRs+bRIgD0WHu5+3MDR7bzy94AAAAwHyx2wke6daU6XHl4w+Hg3zc+Dnp8dHzxq918G/LV7Xkfx8jeAAAAMB/E7udW1rScd2tIlv5xL8UPEpx5HOCx+bnoisHD7e0AAAAwNli1/vS0tHjpwaPLOLHLhaUgkcpHOSgcX7w+CBmXCt4zApJAAAAQBY7P3hsHAsW3WPDiXvpJH/7u4PBozW+vWP6fuX3L3yHx8zg0UeHHCl6XQiJ17pK8PgghgAAAABHxS4KHsP3bkyCQtwSsnc7SgoEw20jo4AwjgzTKy324sX2KpIcCKbvc1bwiGNy0Jhe0XKF4LH3ngAAAMAssQuDR68/Uc9KJ+3bE/04ZnPCP7piotVFhHTM9CqLCBwbu5iy+7LTTilunBE8huPSa+eAc3HwSK87mHxOAAAAYJ7YpwQPAAAAgFsQEzwAAACAasQEDwAAAKAaMcEDAAAAqEZM8AAAAACqERM8AAAAgGrEBA8AAACgGjHBAwAAAKhGTPAAAAAAqhETPAAAAIBqxAQPAAAAoBqxIXisVqvigQAAAABL0LaN2BA81ut18WAAAACAJWjbRmwIHu3aB1zpAQAAACxJ2zJy7Gg3Ch5mZmZmZmZmZjVM8DAzMzMzMzOzytY0/wDv+axZZKnFcAAAAABJRU5ErkJggg==" InformativeScreenshot="dfc74bf4062fd4d644f95b96dd958c8e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT primaryContact'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Text="[CurrentRow(2).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 442, 1080, 38" ElementType="InputBox" FriendlyName="'INPUT primaryContact'" FullSelectorArgument="&lt;webctrl id='primaryContact' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='primaryContact' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="157c090f-d47c-4925-a6ae-ec09f4cbd5e5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAqCAYAAABfqkt2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARoSURBVHhe7dw9btw4GAbgPfC2W26TLl26lC58gmCRxhcwYOQIQXwHTzGl1vr5JJLi/HjsQSLO8wIPAkvUSJxUfEHNX52IiIiIiIiISGNReIiIiIiIiIhIc8kKj/1+3+12u+7l5QUAAABgE/ouo+800syFR3+idhEAAADAFqSlx1x42NkBAAAAbFnfbUTmwqM2EAAAAGBLIgoPAAAAoBkRhQcAAADQjIjCAwAAAGhGROEBAAAANCOi8AAAAACaEVF4AAAAAM2IKDwAAACAZkQUHgAAAEAzIpcXHr8euk///Nv9XXXfPdauST3dnzfuj/Oj+1rM99P358q4j/Hz+5fu61P93MX6/7u7H/VzAAAAsGGRdxcetcX4492ZpcfG9OVDX3Dkc54KkM8P3c9k7Ic48h1f7rn79vn1eRUeAAAANChylcIjSoAP35nwOx2b73Tuw3d6KDwAAADgTSJXLTyiABh2Rtw9jAvt1+PDYjt7pSUKkuJ1kWFRnh9b3W96jvmaYsz63v9lzzYbnudL9+1Xciwx7Fo5uIvjuXt8KsuOYi7ljpeY//DvMm5+9uL4UlBMhUX13GLcZbMYP/fEMwEAAMDGRa5TeBTn4lWQrGSoFB5p4RDXrI8lpUTlGcoxtXvXyotThUZfMpy9gyNKmKSIWL3mE4VGcs/VmNX8KrszpjHLs01j0rlkn2OHBwAAAO2KXKHwiB0Iy8J9LB2K3QS1wuPoQn45lhUpZUlRG1O9d7qbY7z/4ULj1PlcvTwpPmP1DK/K77T6d3FNWWBUx6QUHgAAALQr8u7CY9yFUSgW+9ViolJ45IXCeCwrVMoCIBE7OUJWeFxSPmTeUngcLhSyIiSb/6RacNTnu/r+p/tVC56MwgMAAIB2Ra70Gx65qxUexaJ/OF6MqRce+fHjr7P0xpLgLYVHbez7C4+prJjmO5YWeYFxaL4LhQcAAADtimy68KgWFWcWHuO4flfHebs3TpUiy/nDhcIwJo5fUngM1xx/pWWYrx0eAAAA3KjIhguPceFeFhXjgn+57mDhEdff3U/FR3m+cGy+07l4lno5UszxgsKjOpdpTF6k+A0PAAAAblNk+zs80tIgFv/JZx0uPJZy5ND5UozP5zw+Z/YZZQnxavWsFxQe4zXp/afyIrv/dCybU/r9KjwAAABoV2Tbv+GRLvgHyysqsaA/VnjE5+X3PWG6Zrnnoeun5whH5z+pfKdjUbJcP5c0k/7eqzIlvS4ZF+eiODm+EwQAAAC2J3J54dGCYeFv0Q8AAACtiNx04THsgvBqBwAAADQjcpOFx1t/uwMAAADYhshtv9ICAAAANCWi8AAAAACaEVF4AAAAAM2IKDwAAACAZkQUHgAAAEAzIgoPAAAAoBkRhQcAAADQjIjCAwAAAGhGZC48drtddSAAAADAFvTdRmQuPPb7fXUwAAAAwBb03UZkLjz69Cfs9AAAAAC2pO8y0rKjT1Z4iIiIiIiIiIi0EIWHiIiIiIiIiDSWrvsfZsUm93KeTqUAAAAASUVORK5CYII=" InformativeScreenshot="cdbec1ff488d3f60573b2b58b39eb082.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT street'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Text="[CurrentRow(3).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 500, 1080, 38" ElementType="InputBox" FriendlyName="'INPUT street'" FullSelectorArgument="&lt;webctrl id='street' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='street' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="1458a8be-271b-4089-a9d2-6f6050f56706" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAqCAYAAABfqkt2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASTSURBVHhe7dw7cts6AAXQt+C0r3STzl06ly68AhdqvIHMZLKETLIHq1DJJ5AECYCgRP9eLOjcmVOIH/DT4Q6ofzoRERERERERkcai8BARERERERGR5pIVHofDodvv993z8zMAAADARQhdRug00kyFR9hROwkAAADgEqSlx1R4WNkBAAAAXLLQbcRMhUftQAAAAIBLEqPwAAAAAJoRo/AAAAAAmhGj8AAAAACaEaPwAAAAAJoRo/AAAAAAmhGj8AAAAACaEaPwAAAAAJoRo/AAAAAAmhHz5sLj+/1N9+Xf3N2P2nHfusffy+0f4vdT9/X+Z31f5md319/zC+4tjL3yjJMfDy8bEwAAAHgXMW8oPP50j7c33Zfbp+5Xun0sBL7u/szb/tcCYLyvLYVHuK/bh+5u6/GBwgMAAAA+rZjXFx79xL8+qf+1+3ac8D903+O2T1l4zMct7vcUhQcAAAB8WjGvLzw2TuqHMuFm0q/86FdWPHWP8XOYZJVIeXz985h5f34P8ROV6ESJkRYXp0qMcV8c825XObZ/F/GY4/3s8nfTP9P98XlDwRKOmcqY4n7L1TJH5SdD2cqZDfsBAADgmsS84ZOWebJ+dpJdliOxIChWYQxlR3LcWDak4w8T/HL1SFpAbFvhka/qWDlncf35mafrldefCpKi8MjGCcaxkmuWz9b/TkuQopg5tx8AAACuTcwb/7S0XFERVFZVVAuP5HdvGKssT7JiYmVCn0/8txQey2MWZcvRolAIsoKjfq1yrLxcWd+Wv4Nzz7HlOQEAAOC6xLyx8EiMRcAknYhXC49isl8tQY76kmPYXi8JjrLxNhQB1WuVhcswTlnA5KXLcM5iRUUxfn/fWXGyfo99yTJuH543vM/KM2/YDwAAANcm5v0Kj0Q/aV8UHOXvWuERzqtJC4/a/mB74THc34qpmKivOMlKjrVPSJKSJvxeLTziNUuLsijZt7LiZHU/AAAAXJGYDyk8FkXA5sIjOaZiKDzOrWY4V3isFRlH2T38nRUeJ/Xjnjjv3H4AAABoXMyrC4/q/1tExQqHRZnR/y6Ki7XVEumx5TijvFA4UyasjDEYCox47rv+h0cxTv39rZQsidpYL9kPAAAALYt5/QqPsaCoFQv9ZD7dXpYMaYmRKIuC2mqM4XOU5NxFUXKq8Bj3nSgEsvHHsefrj4VIer2sAJnPOVd4lOXKdNz0bLXnSN/Huf1xGwAAAFyPmDd+0jJOuvsJ/myxSiM9LkzQVwqPYJj0z2PVJu9DKTFbXG8sIRYrORYFRsVqgTFea1cWLPM50zV34fe5wiOYC5RB+U4q7zcrOM7tBwAAgOsS8zH/4QEAAADwF8QoPAAAAIBmxCg8AAAAgGbEKDwAAACAZsQoPAAAAIBmxCg8AAAAgGbEKDwAAACAZsQoPAAAAIBmxCg8AAAAgGbEKDwAAACAZsQoPAAAAIBmxEyFx36/rx4IAAAAcAlCtxEzFR6Hw6F6MAAAAMAlCN1GzFR4hIQdVnoAAAAAlyR0GWnZEZIVHiIiIiIiIiIiLUThISIiIiIiIiKNpev+Az9LMjJug//KAAAAAElFTkSuQmCC" InformativeScreenshot="0333c2bf9e5b7d57a27ee3be23402ced.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT city'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Text="[CurrentRow(4).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 558, 353, 38" ElementType="InputBox" FriendlyName="'INPUT city'" FullSelectorArgument="&lt;webctrl id='city' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='city' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="c18eaee0-da1e-4978-99b7-ea542377d5fb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWUAAAAqCAYAAABr/Eq2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVHhe7ds9UiJRFIbhWfCkE5qYmZkRGrgCAxM3YJXFEizdAx0Q3vECp6e7aUaGHz1DP1/Vk9BA+NatK/4oZmaWZqJsZpZovSgvl8vSNE1ZLBYAnFntbe1ud22U64OxDwFwXt0wt1F2Qgb4HrW/sTbKY28E4GvERBkggZgoAyQQE2WABGKiDJBATJQBEoiJMkACMVEGSCAmygAJxE4S5dfH2/Lz11XHfXnuvee9PNxclevH995nZi/d9wBMV+zIKM/LrEb45qm8dl6PSO+M7ttTuf7bc4CJiR0V5ee77SD3nm2dmDdEGaAndniUPwvry7wT5M71xct955rjw918c7Iev/Koz/+8BnCZYodHeRXXHSfhLYM75WHQxwLvNA1MSOzgKI+fbnf5JMojp+J/+36A/1ssSZSH3+fqApiWWI7ri5X1LzlWr7m6ACYmdr4/9PWe7xPlzS82dv7hD+ByxQ6P8of9fxK3X5Tj9D3bxLn3DOCCxY6K8v7/PLJnlOP7Rp8BXK7YkVFeW5+Ku4ZXD4Modz8zCHr/hA0wDbGTRPl01vF2dQFMTSxXlFfXGrfl4W3kGcAFiyWJsrtkYNpiya4vAKYpJsoACcREGSCBmCgDJBATZYAEYqIMkEBMlAESiIkyQAKxNspN04y+EYDzqv2NtVFeLpejbwbgvGp/Y22U6+oDJ2aAr1F72w1yXS/KZmb2vRNlM7M0K+U3vdXimBWenLoAAAAASUVORK5CYII=" InformativeScreenshot="bf8c11b12437600831e0f40eaafcd675.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NSelectItem DisplayName="Select Item 'State'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[CurrentRow(5).ToString]" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Version="V1">
+                          <uix:NSelectItem.Items>
+                            <scg:List x:TypeArguments="x:String" Capacity="50">
+                              <x:String>State</x:String>
+                              <x:String>AL</x:String>
+                              <x:String>AK</x:String>
+                              <x:String>AR</x:String>
+                              <x:String>AZ</x:String>
+                              <x:String>CA</x:String>
+                              <x:String>CO</x:String>
+                              <x:String>CT</x:String>
+                              <x:String>DC</x:String>
+                              <x:String>DE</x:String>
+                              <x:String>FL</x:String>
+                              <x:String>GA</x:String>
+                              <x:String>HI</x:String>
+                              <x:String>IA</x:String>
+                              <x:String>ID</x:String>
+                              <x:String>IL</x:String>
+                              <x:String>IN</x:String>
+                              <x:String>KS</x:String>
+                              <x:String>KY</x:String>
+                              <x:String>LA</x:String>
+                              <x:String>MA</x:String>
+                              <x:String>MD</x:String>
+                              <x:String>ME</x:String>
+                              <x:String>MI</x:String>
+                              <x:String>MN</x:String>
+                              <x:String>MO</x:String>
+                              <x:String>MS</x:String>
+                              <x:String>MT</x:String>
+                              <x:String>NC</x:String>
+                              <x:String>NE</x:String>
+                              <x:String>NH</x:String>
+                              <x:String>NJ</x:String>
+                              <x:String>NM</x:String>
+                              <x:String>NV</x:String>
+                              <x:String>NY</x:String>
+                              <x:String>ND</x:String>
+                              <x:String>OH</x:String>
+                              <x:String>OK</x:String>
+                              <x:String>OR</x:String>
+                              <x:String>PA</x:String>
+                              <x:String>RI</x:String>
+                              <x:String>SC</x:String>
+                              <x:String>SD</x:String>
+                              <x:String>TN</x:String>
+                              <x:String>TX</x:String>
+                              <x:String>UT</x:String>
+                              <x:String>VT</x:String>
+                              <x:String>VA</x:String>
+                              <x:String>WA</x:String>
+                              <x:String>WI</x:String>
+                            </scg:List>
+                          </uix:NSelectItem.Items>
+                          <uix:NSelectItem.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="506, 558, 353, 38" ElementType="DropDown" FriendlyName="'State'" FullSelectorArgument="&lt;webctrl tag='SELECT' id='state' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' id='state' type='' class='form-control' aaname='' /&gt;" Guid="6f139a67-e00e-42fe-9741-f59a0f52fa3d" ImageBase64="" InformativeScreenshot="9edb825c6527847e2698a37255a98b86.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                          </uix:NSelectItem.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NSelectItem>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT zip'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Text="[CurrentRow(6).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="869, 558, 353, 38" ElementType="InputBox" FriendlyName="'INPUT zip'" FullSelectorArgument="&lt;webctrl id='zip' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='zip' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="a6a1a314-ad6a-4607-81ff-67701859d75b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWUAAAAqCAYAAABr/Eq2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVHhe7doxTtxAGIbhHJg2JQ0dHR0lxZ5gCxousBLiCAjusC5cTpj1/sYO40Cy9jKKn096lCg2KV+NBv9IZmZWzUTZzKyijaLctm1qmibt93sAFpZ7m7s7XB/l/KD0QwAsaxjmPspOyADfI/c31ke59CIA5xETZYAKxEQZoAIxUQaoQEyUASoQE2WACsREGaACMVEGqEBMlAEqEDspyru7y3Txc9rV/evbe69pex1/L/8/AGsXW+Sk3MX6Jm1fys8BGIvNH+XHzeGUfPtYeAZAUWzmKD+l23x1cfc0+Lfx9cXz/U26uH5Iu/xnf9WxSbv+fYD1ic0Y5S6+HwNbiHIO8VuYn4/vdNcdwgysV2y2KHexLd0jl6L8+3vdCdsvA4G1is0T5ZeHdDUZ1fL1RZySw+G0PLr2AFiP2AxRPl5bFEI7fC7KANNiJ0f588/fvhLlY9hFGVip2GlR/tLnb4UoT9wp+4wOWKvYCVEuff5WUory+LrjcNqevP4A+P/F/j3Kx1PyHx2CXYryJm0jzpkgAysXm+EXfX8nouybZIB3MVEGqEBMlAEqEDt7lAH4KCbKABWIiTJABWKiDFCBmCgDVCAmygAViIkyQAViogxQgVgf5aZpii8CsKzc31gf5bZtiy8DsKzc31gf5bz8wIkZ4Dxyb4dBzhtF2czMvneibGZWzVL6BUnH9ZaoxMwhAAAAAElFTkSuQmCC" InformativeScreenshot="6d0e8b716f18f7511702b2f23620bc3a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Text="[CurrentRow(7).ToString]" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 616, 1080, 38" ElementType="InputBox" FriendlyName="'INPUT email'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='email' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' class='form-control' aaname='' /&gt;" Guid="b42698f0-e99d-425b-80e5-cf7d1e6d4b6d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAqCAYAAABfqkt2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKVSURBVHhe7d0/ThtBGIfhHNhtSjd0dHSUFJyAgoYLICGOgOAO3mLLyY7tbzS7mVCYxPEOzys9Stg/uP9p1/xIkiRJkiRJnWXwkCRJkiRJ3TUbPMZxTMMwpN1uBwAAALAKecvIm0ZdGTzyidZNAAAAAGtQjx5l8PBkBwAAALBmeduIyuDRuhAAAABgTSKDBwAAANCNyOABAAAAdCMyeAAAAADdiAweAAAAQDcigwcAAADQjcjgAQAAAHQjMngAAAAA3YgMHgAAAEA3otMHj/endPVzmzZ/dJ+eW/f9TS/31ed8pIfrbbp6/Pj9OgAAAOBbiL48eNy+NM79FwYPAAAA+O4igwcAAADQjegsg8fz3TZt7l4P/y5eeZkdm66Z3dt4bWb2eV5pAQAAACrR+QaP6doyRlRDxvLY8uf697893kz33KSH9+MxgwcAAABQif7dl5ZWT2scBo/6S0wP48Tm+im9LY8d79uPG7Pzk+UIYvAAAAAAKtH5nvBYjBf7Y7NXWOaDR+3wZMd07sjgAQAAALRElzt4LJ4g2X+OJzwAAACAT0QXO3i07jF4AAAAAJ+JLnTwaI8X8WqLwQMAAABoiS77CY8yZkyOn5cHjzJqGDwAAACASvTlwSO+Y6MlxpBTBo/yc/l9+c/Rvqbb/P+4xuABAAAAVKLTBw8AAACACxMZPAAAAIBuRAYPAAAAoBuRwQMAAADoRmTwAAAAALoRGTwAAACAbkQGDwAAAKAbkcEDAAAA6EZk8AAAAAC6ERk8AAAAgG5EBg8AAACgG1EZPIZhaF4IAAAAsAZ524jK4DGOY/NiAAAAgDXI20ZUBo9cPuFJDwAAAGBN8pZRjx252eAhSZIkSZLUQwYPSZIkSZLUWSn9AgSxfG4M5vLWAAAAAElFTkSuQmCC" InformativeScreenshot="ab92035e0517a42341bb22fccef58ef7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <If Condition="[CurrentRow(8).ToString = &quot;YES&quot;]" DisplayName="If company offers discount, select YES else select NO" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Yes'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Version="V1">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 564, 13, 13" ElementType="RadioButton" FriendlyName="'INPUT activeDiscountYes'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='radio' class='form-check-input' aaname='' /&gt;" Guid="741a4681-b71f-494f-9020-aab8ec97d8df" InformativeScreenshot="c5fd0caaf8e091945ccdd74def9b04df.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="161, 558, 26, 24" ElementType="Text" FriendlyName="'Yes'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='form-check-label' aaname='                                 Yes                             ' check:innerText='Yes' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD/SURBVEhL7ZNhDoMgDIV3Lo4lR8Gb4EWMpzDxDh1QFEqLmW5jP8aXNNlA+uDxeMCP6MLN6MLNQOHZgFIK1LiEv4zVgj6bv8Fx4m3SQdzMceBgAzs40cG6X58jszoKKAPkXNENvqH3oHccLdXTfrYFjGDxMvoN7qXBrnEiQufzfgkWLrQcm2ED6gAbKxwJ8/m1xMOUjjHhZDkWWVBpksTi2hdCKAg7KilHN4oMeML3OL6HVPwuQxZ2S/zdlneTmkrF7T9KeBE3hM9Pwqi4d0kYm/AUhw2dvHNp/pqwg6WaBE4Kl9zrsrAHxVPRlNNXEUpIeUX4+3ThZnThZvybMMATQH1Ydpn+OwoAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheck.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheck>
+                          </If.Then>
+                          <If.Else>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'No'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheck_5" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Version="V1">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="203, 564, 13, 13" ElementType="RadioButton" FriendlyName="'INPUT activeDiscountNo'" FullSelectorArgument="&lt;webctrl id='activeDiscountNo' tag='INPUT' type='radio' /&gt;" FuzzySelectorArgument="&lt;webctrl id='activeDiscountNo' tag='INPUT' type='radio' class='form-check-input' aaname='' /&gt;" Guid="441a9f01-b7eb-4b9a-98f9-50be6df90603" InformativeScreenshot="bfafc8e59e8a88619f45860a569348de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="221, 558, 20, 24" ElementType="Text" FriendlyName="'No'" FullSelectorArgument="&lt;webctrl aaname='                                 No                             ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                                 No                             ' tag='LABEL' type='' class='form-check-label' check:innerText='No' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADUSURBVEhL7ZPRDYQgDIZvLsaSUXATXMQwhQk7/NdAOUsPD0304RK+pA9U6lcqvvAwQ9BlCLpUgjAbGGPhN05INg9rDNzK65M0BBSTR+Tch1sFFHZRitsE1L1PIofA+URTEOC4oRyqhmgKYimcxXYt4LXckydQSw4EQFxs6kq/sKzl3p3cmBzvoYAU8JPoqBLwM3lCRot/CAg5hobg6yIQ1wREHhX9G+uFE4h8V7CPKseN30BQRiUE1fiYVH/2FmlysRAk1H/QqK0ETzAEXYagy78LgDch38q3T/mTbgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheck.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheck>
+                          </If.Else>
+                        </If>
+                        <If Condition="[CurrentRow(9).ToString = &quot;YES&quot;]" DisplayName="If Non Disclosure agreement on file is YES, select YES" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Non-Disclosure Agreement'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheck_6" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Version="V1">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="688, 562, 13, 13" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' class='' aaname='' /&gt;" Guid="ee1c4458-bd17-4fb3-b211-de4ed7c47c87" InformativeScreenshot="1a6f32c37ff5525888c2f1a29d18d511.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="688, 558, 261, 24" ElementType="Text" FriendlyName="'Non-Disclosure Agreement'" FullSelectorArgument="&lt;webctrl aaname='                             Non-Disclosure Agreement on File' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                             Non-Disclosure Agreement on File' tag='LABEL' type='' class='checkbox-inline' check:innerText='Non-Disclosure Agreement on File' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQkAAAAcCAYAAAByBEr4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVXSURBVHhe7ZttTiMxDIb3XD0WSFykiIuUM/AfcQiExB1m4yTO2G+cjw4zLHT9SBG0k/jjteMWaffP4jiO08GHhOM4XXxIOI7TxYeE4zhdfEg4jtPFh4TjOF3KkHh/f1+enp6Wh4eH4aJ9tN9xnNunDAm6+C8vL/lVH9pH+y3eHk/L6XS/XD7yG5KPy3J/Oi3n1/z6UD6Xyx3FYqy7S3iq+Xy+N9/fxttyDn6+J88jWTX8/bkcAPXz41t+8Z10epsW9/HrObw+h25MbO3xMiToG8I1tPanISEClfyLIWEUMcW4irc/NzIkYr3Oy5n02m2A3grt/jqebb5/3pAI6/4ZwvkhQ+L4At/GkIi1pKaKn0iNb4f/LT4khnSHRAjkYn1am0MiXajyVQnP8Fem+HPdN76AAyGh8SsBwZ8lrhyItNaYjCGRc2/by/GKPfK8WWCVQzp/fl79YDzFtpFLTTqTBr38HYC82H/xTTEGf6kftG+tnz2EentYkzf6CXviM37PyFc9D0vVqtQPdCu9BO93v5UO9sYaXtvfk0OCbeeXVg/N1OCwIfHJ4shEcEhwg4k9KWghJItXNVevMMRASIhFCRh9SsHQVn4tBVf2uMnik5LDesnwvBErxGAVWO/JNqpC13WY0g/8r3UVtOpp5I51aNW5nAuM9pSLXmyLC4nvCf/pnNApx73Wh+2IPVV8Rs0Q1kPsaeUktR3XZ8I3EW2vdrCHZmpAHDgk1iIWp9BUcu9KKlApWAwcGh+b02QkZPLDNqSAKe5OkaJ/vIwSabsRh8oBcjbAAkeUNrYfO5exv6o2RgPFPaY/se+K+imfE3uSL207Pod8dS527lonaw/qO76o2i8Dtjf199h3JNpetVA9NFODzKFDoiTDgarA2okqG5BoZCgiMRIyFYttWAJaU5XQDWUhbdtNifHFnMknFIhR8TGqwZK9fmOvRH8tbUx90VYjLzxr1K+pn9i7dY+lU91PcCmJGDe/r3sjgfm3tU0MtFfxQJ7D/s62w556CVtgW2ozoy9z8JAI8IUjsVTyKdH68uwhIjEoItiomys1yir+2lhWI2rqIVHHWseXCid84jP0qRre0rPXTGE1tKniUItr8dUhYdmmlfbO7zFsg051P6E9XvsPiWP6e+Q7A7alNjP6MscPiUAKKBTgtR4SVqLRBr8/EjH/viaoL01TyI6ANTww0v6UD8SkqIdE3SztJiK4iPzcjC/mMDEkRs2k6JxRzfvVIdHTb/seS6f6UrJmLfYbEtbzq/rbZLKunR6f0Zf5liFRkgqJ0+Lk7b3QfJtEJHpC1s+s5lJEn7m5ho0mm6wRx0QOspmaF6I7JPr1qC440Y0r55LtqWbPpJjEeat+Df1UDSb2NDWBfJUGrfxUnHsMiZb2e/T32HcEbF+rL1OGxK7/4rISJpATVw3E74lk43kp2iYRibaQlY/AqPl0XvqyJGTxocliDvJS4nloHAJzzDYq7QZDgm1LHaz8GEsbSTqbfWKMVUwBq36Byo9R09EeKw9ZR0bXDnKIoP5Qvwj2U7u/CqzH7v094ZsA26jNTA2IMiT2+r8bWBBJCgqDyE3MC89uEpHIQkrbvIz4UMDUSPIcxBDgfHh1m4wbhldVYNAhLLzwOqYQT7Q5GhIE2q5zSeR9E41f/Ki8QizxT8rxkCBQP6uevT1JD20b60hYPYn11boZ9cv6Km1ibnReDhwEtN+lv/cZEsRMDcqQcJxd6AwF53fiQ8LZSP40U59Mk59wzq/Ch4TzBeo/kXxA3B4+JBzH6eJDwnGcLj4kHMfp4kPCcZwuPiQcx+niQ8JxnA7L8hftGqZo+ehRoQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheck.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheck>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Register'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="df00f800-c385-49e9-a0cf-e4a3ca993d81" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" DesignTimeRectangle="143, 622, 140, 40" ElementType="Button" FriendlyName="'Register'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='btn btn-orange' aaname='Register' check:innerText='Register' /&gt;" Guid="3c372951-2477-4cbc-85d9-17b05fa9122b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJAAAAAsCAYAAACKTjG2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKxSURBVHhe7ZwxbtwwEEVzo1S5UM6QIpdwm2O4cIDcwS5yAmPTBdhimw2gwsCCWUr6wyE55Gq5EUxl/wdeQ4mU7HkeETDAD45hbggFYm5KJtCfnz/c72+f3a+vn9zuy0dCRhe8E96NNJFAh+8P5gKEAO+Ijgjk7bImEJKiO5EI5FuUdTMhKd4VRATinocsxbuCiEDWjYSUQCgQaQKhQKQJhAKRJhAKRJpAKBBpAqFApAmEApEmkO4FOrwe5ze0c3pd6f93T8/uND7h6IYn43oF/86rvVcnIJsXyGeVYjUKdNyPkyhQL4hAw7M7XHHtvaBAnVGV5GU3XXM7d1Tjadd6e1FzZlDoMfvH/DmFDhTN8znPna49uGGYxyR67qN7m0fHJD+PrLvfhftk7f5ANi2Q/NLVtazAc3RHSAWLUhGotPZU6IpAslaaIL61ds9dDPkv9kDSYaRQqiNlY6EThAKp7lAUKAgizzM6IETQxV8yFgSKO16vINsWKOlKddnSblD47F3RgWqfRlNOK/NnStbu+LOlQTb4CdMFKUhQyFjwwr5JxisCFWVQIl8t0DyXAq1ELtAZKe45aty8N+XSxhtzTYE08Z4H3agmkNWxAAVaiZIUuttIYZRYMpYJEwpqdomiQJYIQaJsL6NEkDH5GZbN6xlkswLFHSB0EylEkiBLLB9yGi53IGvelAv7JN0xoxjvTYH+LWWBzujCWH/xc7Q81j3+evYcQyBPLlGyl0r2PFZ3nBLPo0CbQRXYkm4jBXxvkDsUKO9QOmF/Q2ogdymQx5KI8iwHuVuByG0gFIg0gVAg0gRCgUgTCAUiTSAUiDSBUCDSBCIC8XgXshTzeBceMEWWYh4wxSPuyFLMI+58eMgmuUTxkE3E2+VbFPdEBHgXvBO68yCZQAxzTSgQc0Oc+wtl852InNtZ7AAAAABJRU5ErkJggg==" InformativeScreenshot="335edf9275a5bd1f41a938075c7c129a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="143, 622, 1080, 40" FriendlyName="'Register'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div' idx='8' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='form-group' tag='DIV' aaname='                                      ' check:innerText='Register' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABDwAAAAsCAYAAACJ86hrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPUSURBVHhe7dxBTttAFAbg3qirXogzdMEl2PYYLEDqHcqiJ0DpDolFNiBlUQm5TBKPx/Y4gEmVZ/g+6d/YsROk2fjneb40AAAAAB+MwgMAAAD4cEaFx+Pvn83dj7Pmz/m3ZvX9q8h2LaQ1kdYGAAAALEGv8FhfX1QfeEXapDUCAAAA0eXCI/33vvaAKzKMSQ8AAACiy4VHemWh9nArMkxaKwAAABBZLjzs2SGvTVorAAAAEFkuPGoPtiJTAQAAgMgUHjIrAAAAEJnCQ2YFAAAAIlN4yKwAAABAZAoPmRUAAACITOEhswIAAACRKTxkVgAAACAyhYfMCgAAAEQWvvBY3z7sf2Hd0+1F9bp35+pX87T9hodmc1U5fyDpN/+33xUkAAAAENniC4/kv5QLMwuPh/vtRQoPAAAAOKHlFB6bX836DedOFYUHAAAAnN6iC4/VzWp3rlk1D8Xx4VTI35vimn3aYmLr/nL8PRMTHr3rkudrd+cums1mfywrr71s/u6Pbg3+nnzf+1X3uXzveAEAAIDIFl145JKgODcqJPbKiYthIdJzoPCYuveumDhQeOR7DXVFTe3ekadEAAAAILIPsYdHnuDIxUIx8TE61k1adIVCMX0xWXh0hUb+vsqESVtclGXFa451hUd/oiRqAAAAILJlFx6DqY/D5chw2mLiNZg3THgcelWmWqbU7F9byfcO/BpLGQAAAIhsga+0lAXCRGkxYVtQTOz7kY8fKDwmy4uieHlz4bG/VuEBAAAAx7PMPTxyGfGsOF797DAvbXTaXlstPMr09+xopz0OFR61iZA2Cg8AAAA4nsVuWlpOc+QioShC8rFRwdEVENUpjMnCo1ZcdKXHaC+OorjIx/Lf8LrrIgcAAAAiW2zh0Z+w6KY1cnEw0JUb/bKk9bR5ecKjdt3OC/t8lBMpPZXfrfAAAACAd1tw4fGcskioTVTslWVH7TPp/Oh7KoVHyrj0GOwFMtizozZ9stO/TuEBAAAAxxO+8Dh+ikKiVpIspHA4dQAAACCyT1h4jCdASt3+HHIoAAAAENmnLDxSaqWHsuP1AQAAgMg+beEh7wsAAABEpvCQWQEAAIDIFB4yKwAAABCZwkNmBQAAACJTeMisAAAAQGQKD5kVAAAAiEzhIbMCAAAAkeXC48/5t+qDrcgwaa0AAABAZLnwuPtxVn24FRkmrRUAAACILBcej79/Vh9uRYZJawUAAAAiy4VHsr6+qD7girRJawQAAACi6xUeSfrvfXplwZ4e0iathbQmTHYAAACwFKPCAwAAAGDpFB4AAADAB9M0/wC7CX0EOViwbAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachRow>
+                <ui:LogMessage DisplayName="Log Message (End)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Entered details into website.&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, -8, 1382, 784" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="79837affe6f29f18d6dc1e657179599b.png" Selector="&lt;html app='chrome.exe' title='Automation Anywhere Labs - Customer Onboarding' /&gt;" Url="https://developer.automationanywhere.com/challenges/automationanywherelabs-customeronboarding.html" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message (Error)" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;There was a problem while uploading the details.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
